@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    #运行的环境
+    active: test
+  application:
+    name: ccvoice
+  datasource:
+    url: jdbc:mysql://${ccvoice.mysql.ip}:${ccvoice.mysql.port}/${ccvoice.mysql.db}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ${ccvoice.mysql.username}
+    password: ${ccvoice.mysql.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    # Redis服务器地址
+    host: ${ccvoice.redis.host}
+    # Redis服务器端口号
+    port: ${ccvoice.redis.port}
+    # 使用的数据库索引
+    database: 0
+    # 连接超时时间
+    timeout: 1800000
+    # 设置密码
+    password: ${ccvoice.redis.password}
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
