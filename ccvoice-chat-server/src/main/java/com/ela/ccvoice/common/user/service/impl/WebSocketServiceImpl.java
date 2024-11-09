@@ -1,14 +1,21 @@
 package com.ela.ccvoice.common.user.service.impl;
 
 import cn.hutool.core.util.RandomUtil;
+import cn.hutool.json.JSONUtil;
+import com.ela.ccvoice.common.user.common.utils.JsonUtils;
 import com.ela.ccvoice.common.user.dao.UserDao;
 import com.ela.ccvoice.common.user.domain.entity.User;
 import com.ela.ccvoice.common.user.service.LoginService;
 import com.ela.ccvoice.common.user.service.WebSocketService;
+import com.ela.ccvoice.common.user.service.adapter.WebSocketAdapter;
+import com.ela.ccvoice.common.websocket.domain.enums.WSResponseTypeEnum;
+import com.ela.ccvoice.common.websocket.domain.vo.response.WSBaseResponse;
+import com.ela.ccvoice.common.websocket.domain.vo.response.WSLoginUrl;
 import com.ela.ccvoice.common.websocket.dto.WSChannelExtraDTO;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import io.netty.channel.Channel;
+import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,8 +59,14 @@ public class WebSocketServiceImpl implements WebSocketService {
 
         //生成随机码
         Integer code =generateLoginCode(channel);
-        //找微信申请带参二维码
-        //把二维码发送给前端
+        //TODO 模拟登录传入的url
+        String customerLoginUrl = "customerLoginUrl";
+        //把url发送给前端
+        sendMsg(channel, WebSocketAdapter.buildResp(customerLoginUrl));
+    }
+
+    private void sendMsg(Channel channel, WSBaseResponse<?> resp) {
+        channel.writeAndFlush(new TextWebSocketFrame(JSONUtil.toJsonStr(resp)));
     }
 
     public synchronized Integer generateLoginCode(Channel channel) {
@@ -65,18 +78,18 @@ public class WebSocketServiceImpl implements WebSocketService {
     }
 
     public boolean scanLoginSuccess(Integer code, Long uid) {
-        //确认连接在该机器
-        Channel channel = WAIT_LOGIN_MAP.getIfPresent(code);
-        if(Objects.isNull(channel)){
-            return Boolean.FALSE;
-        }
-        User user=userDao.getById(uid);
-        //移除code
-        WAIT_LOGIN_MAP.invalidate(code);
-        //调用用户登录模块
-        String token = loginService.login(uid);
-        //用户登录
-        loginSuccess(channel, user, token);
+//        //确认连接在该机器
+//        Channel channel = WAIT_LOGIN_MAP.getIfPresent(code);
+//        if(Objects.isNull(channel)){
+//            return Boolean.FALSE;
+//        }
+//        User user=userDao.getById(uid);
+//        //移除code
+//        WAIT_LOGIN_MAP.invalidate(code);
+//        //调用用户登录模块
+//        String token = loginService.login(uid);
+//        //用户登录
+//        loginSuccess(channel, user, token);
         return Boolean.TRUE;
     }
 

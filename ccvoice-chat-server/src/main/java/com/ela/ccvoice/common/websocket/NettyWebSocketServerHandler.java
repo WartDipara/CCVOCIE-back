@@ -61,13 +61,13 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
         WSBaseRequest wsBaseRequest = JSONUtil.toBean(text, WSBaseRequest.class);
         switch (WSRequestTypeEnum.of(wsBaseRequest.getType())) {
             case LOGIN:
-                System.out.println("登录二维码");
-                //类型必须是TextWebsocketFrame，这是 ws 协议要求的。
-                channelHandlerContext.channel().writeAndFlush(new TextWebSocketFrame("测试channel返回"));
-            case AUTHORIZE:
                 webSocketService.handleLoginReq(channelHandlerContext.channel());
-                break;
+//                System.out.println("登录test");
+//                //类型必须是TextWebsocketFrame，这是 ws 协议要求的。
+//                channelHandlerContext.channel().writeAndFlush(new TextWebSocketFrame("测试channel返回"));
             case HEARTBEAT:
+                break;
+            case AUTHORIZE:
                 break;
         }
     }
