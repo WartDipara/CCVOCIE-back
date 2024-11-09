@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author <a href="https://github.com/WartDipara">ela</a>
  * @since 2024-10-29
  */
-public interface UserService extends IService<User> {
-
+public interface UserService {
+    void register(User user);
 }

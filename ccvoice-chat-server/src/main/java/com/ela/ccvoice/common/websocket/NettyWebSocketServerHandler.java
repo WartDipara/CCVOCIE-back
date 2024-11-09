@@ -2,12 +2,10 @@ package com.ela.ccvoice.common.websocket;
 
 import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
-import com.ela.ccvoice.common.user.service.WebSocketService;
+import com.ela.ccvoice.common.websocket.service.WebSocketService;
 import com.ela.ccvoice.common.websocket.domain.enums.WSRequestTypeEnum;
-import com.ela.ccvoice.common.websocket.domain.enums.WSResponseTypeEnum;
 import com.ela.ccvoice.common.websocket.domain.vo.request.WSBaseRequest;
-import com.ela.ccvoice.common.websocket.domain.vo.response.WSBaseResponse;
-import io.github.classgraph.json.JSONUtils;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -26,6 +24,10 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
     public void channelActive(ChannelHandlerContext ctx) throws Exception{
         webSocketService = SpringUtil.getBean(WebSocketService.class);
         webSocketService.connect(ctx.channel());
+    }
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception{
+        userOffline(ctx.channel());
     }
     /**
      * 重写握手事件
@@ -47,11 +49,18 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
                 //应该对客户端进行下线操作
                 //TODO 用户下线逻辑
 
-                ctx.channel().close();
             }
         }
     }
 
+    /**
+     * 用户下线处理
+     * @param channel
+     */
+    private void userOffline(Channel channel){
+        webSocketService.remove(channel);
+        channel.close();
+    }
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, TextWebSocketFrame textWebSocketFrame) throws Exception {

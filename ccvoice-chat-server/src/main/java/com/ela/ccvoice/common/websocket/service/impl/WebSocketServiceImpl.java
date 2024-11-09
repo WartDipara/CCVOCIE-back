@@ -1,16 +1,12 @@
-package com.ela.ccvoice.common.user.service.impl;
+package com.ela.ccvoice.common.websocket.service.impl;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONUtil;
-import com.ela.ccvoice.common.user.common.utils.JsonUtils;
 import com.ela.ccvoice.common.user.dao.UserDao;
-import com.ela.ccvoice.common.user.domain.entity.User;
 import com.ela.ccvoice.common.user.service.LoginService;
-import com.ela.ccvoice.common.user.service.WebSocketService;
-import com.ela.ccvoice.common.user.service.adapter.WebSocketAdapter;
-import com.ela.ccvoice.common.websocket.domain.enums.WSResponseTypeEnum;
+import com.ela.ccvoice.common.websocket.service.WebSocketService;
+import com.ela.ccvoice.common.websocket.service.adapter.WebSocketAdapter;
 import com.ela.ccvoice.common.websocket.domain.vo.response.WSBaseResponse;
-import com.ela.ccvoice.common.websocket.domain.vo.response.WSLoginUrl;
 import com.ela.ccvoice.common.websocket.dto.WSChannelExtraDTO;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
@@ -73,7 +69,7 @@ public class WebSocketServiceImpl implements WebSocketService {
         Integer code;
         do{
             code = RandomUtil.randomInt(100000, 999999); //生成六位数随机码
-        }while(Objects.isNull(WAIT_LOGIN_MAP.asMap().putIfAbsent(code, channel)));
+        }while(Objects.nonNull(WAIT_LOGIN_MAP.asMap().putIfAbsent(code, channel)));
         return code;
     }
 
@@ -91,6 +87,12 @@ public class WebSocketServiceImpl implements WebSocketService {
 //        //用户登录
 //        loginSuccess(channel, user, token);
         return Boolean.TRUE;
+    }
+
+    @Override
+    public void remove(Channel channel) {
+        ONLINE_WS_MAP.remove(channel);//移除
+        //todo 用户下线 推送用户下线的消息
     }
 
 }

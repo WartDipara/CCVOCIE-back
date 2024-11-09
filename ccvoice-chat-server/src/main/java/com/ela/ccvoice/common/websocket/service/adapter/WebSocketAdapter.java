@@ -1,4 +1,4 @@
-package com.ela.ccvoice.common.user.service.adapter;
+package com.ela.ccvoice.common.websocket.service.adapter;
 
 import com.ela.ccvoice.common.websocket.domain.enums.WSResponseTypeEnum;
 import com.ela.ccvoice.common.websocket.domain.vo.response.WSBaseResponse;
