@@ -20,6 +20,19 @@ spring:
     timeout: 1800000
     # 设置密码
     password: ${ccvoice.redis.password}
+    lettuce:
+      pool:
+        #z最大阻塞等待时间，负数表示无限制
+        max-wait: -1
+        #连接池中最大空闲连接数
+        max-idle: 5
+        #连接池中最小空闲连接数
+        min-idle: 0
+        #连接池最大连接数，负数表示无限制
+        max-active: 20
   jackson:
     serialization:
       write-dates-as-timestamps: true
+
+jwt:
+  secret: ${ccvocie.jwt.secret}

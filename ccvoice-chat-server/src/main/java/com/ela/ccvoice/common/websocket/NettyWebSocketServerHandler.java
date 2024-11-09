@@ -1,6 +1,8 @@
 package com.ela.ccvoice.common.websocket;
 
+import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
+import com.ela.ccvoice.common.user.service.WebSocketService;
 import com.ela.ccvoice.common.websocket.domain.enums.WSRequestTypeEnum;
 import com.ela.ccvoice.common.websocket.domain.enums.WSResponseTypeEnum;
 import com.ela.ccvoice.common.websocket.domain.vo.request.WSBaseRequest;
@@ -18,6 +20,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Sharable
 public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
+    private WebSocketService webSocketService;
+
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception{
+        webSocketService = SpringUtil.getBean(WebSocketService.class);
+        webSocketService.connect(ctx.channel());
+    }
     /**
      * 重写握手事件
      * 心跳检测
@@ -37,9 +46,12 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
                 System.out.println("读空闲，客户端已经30s没有响应了。");
                 //应该对客户端进行下线操作
                 //TODO 用户下线逻辑
+
+                ctx.channel().close();
             }
         }
     }
+
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, TextWebSocketFrame textWebSocketFrame) throws Exception {
@@ -53,6 +65,7 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
                 //类型必须是TextWebsocketFrame，这是 ws 协议要求的。
                 channelHandlerContext.channel().writeAndFlush(new TextWebSocketFrame("测试channel返回"));
             case AUTHORIZE:
+                webSocketService.handleLoginReq(channelHandlerContext.channel());
                 break;
             case HEARTBEAT:
                 break;
