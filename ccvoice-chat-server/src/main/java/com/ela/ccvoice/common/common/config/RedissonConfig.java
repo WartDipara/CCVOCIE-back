@@ -1,4 +1,4 @@
-package com.ela.ccvoice.common.user.common.config;
+package com.ela.ccvoice.common.common.config;
 
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;

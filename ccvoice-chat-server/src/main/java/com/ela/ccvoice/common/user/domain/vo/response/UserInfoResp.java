@@ -11,9 +11,11 @@ public class UserInfoResp {
     private Long id;
     @ApiModelProperty("昵称")
     private String name;
+    @ApiModelProperty("邮箱")
+    private String email;
     @ApiModelProperty("头像")
     private String avatar;
-    @ApiModelProperty("性别 1male 2female")
+    @ApiModelProperty("性别 1.male 2.female")
     private Integer sex;
     @ApiModelProperty("剩余改名次数")
     private Integer modifyNameChange;

@@ -1,4 +1,4 @@
-package com.ela.ccvoice.common.user.common.utils;
+package com.ela.ccvoice.common.common.utils;
 
 import cn.hutool.extra.spring.SpringUtil;
 import lombok.extern.slf4j.Slf4j;

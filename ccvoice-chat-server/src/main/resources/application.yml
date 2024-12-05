@@ -1,7 +1,7 @@
 spring:
   profiles:
     #运行的环境
-    active: test
+    active: prod
   application:
     name: ccvoice
   datasource:
@@ -33,6 +33,13 @@ spring:
   jackson:
     serialization:
       write-dates-as-timestamps: true
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
 
 jwt:
-  secret: ${ccvocie.jwt.secret}
+  secret: ${ccvoice.jwt.secret}
+
+
+
+

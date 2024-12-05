@@ -1,18 +1,20 @@
 package com.ela.ccvoice.common;
 
 import cn.hutool.core.util.RandomUtil;
-import com.ela.ccvoice.common.user.common.utils.JwtUtils;
-import com.ela.ccvoice.common.user.common.utils.RedisUtils;
+import com.ela.ccvoice.common.common.utils.JwtUtils;
 import com.ela.ccvoice.common.user.dao.UserDao;
 import com.ela.ccvoice.common.user.domain.entity.User;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @SpringBootTest
+@Slf4j
 public class DaoTest {
     @Autowired
     private UserDao userDao;
@@ -49,6 +51,18 @@ public class DaoTest {
         lock.lock();
         System.out.println();
         lock.unlock();
+    }
+    @Autowired
+    private ThreadPoolTaskExecutor executor;
+    @Test
+    public void thread() throws InterruptedException {
+        executor.execute(()->{
+            if(true){
+                log.error("error");
+                throw new RuntimeException("1234");
+            }
+        });
+        Thread.sleep(200);
     }
     @Test
     public void normalTest(){

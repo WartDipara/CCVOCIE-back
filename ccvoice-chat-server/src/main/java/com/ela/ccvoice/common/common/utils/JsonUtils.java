@@ -1,4 +1,4 @@
-package com.ela.ccvoice.common.user.common.utils;
+package com.ela.ccvoice.common.common.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

@@ -1,4 +1,4 @@
-package com.ela.ccvoice.common.constant;
+package com.ela.ccvoice.common.common.constant;
 
 public class RedisKey {
     private static final String BASE_KEY = "ccvoice:chat";

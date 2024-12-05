@@ -47,8 +47,8 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
                 //如果是读空闲，则要求关闭连接
                 System.out.println("读空闲，客户端已经30s没有响应了。");
                 //应该对客户端进行下线操作
-                //TODO 用户下线逻辑
-
+                //TODO 用户下线逻辑 目前只做了简单的断开连接
+                userOffline(ctx.channel());
             }
         }
     }

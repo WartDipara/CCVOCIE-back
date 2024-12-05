@@ -1,4 +1,4 @@
-package com.ela.ccvoice.common.user.common.utils;
+package com.ela.ccvoice.common.common.utils;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
