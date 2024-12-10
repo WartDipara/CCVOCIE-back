@@ -23,11 +23,6 @@ import java.util.List;
  */
 @Service
 public class UserDao extends ServiceImpl<UserMapper, User> {
-    public User getByOpenId(String openId){
-        //mybatis-plus 构建查询
-        LambdaQueryWrapper<User> wrapper = new QueryWrapper<User>().lambda().eq(User::getOpenId,openId);
-        return getOne(wrapper);
-    }
 
     public void modifyName(Long uid, String name) {
         User update = new User();
@@ -36,12 +31,6 @@ public class UserDao extends ServiceImpl<UserMapper, User> {
         updateById(update);
     }
 
-    public void wearingBadge(Long uid, Long badgeId) {
-        User update = new User();
-        update.setId(uid);
-        update.setItemId(badgeId);
-        updateById(update);
-    }
 
     public User getByName(String name) {
         return lambdaQuery().eq(User::getName, name).one();
@@ -75,12 +64,5 @@ public class UserDao extends ServiceImpl<UserMapper, User> {
                 .in(CollectionUtil.isNotEmpty(memberUidList), User::getId, memberUidList)
                 .count();
     }
-
-//    public CursorPageBaseResp<User> getCursorPage(List<Long> memberUidList, CursorPageBaseReq request, ChatActiveStatusEnum online) {
-//        return CursorUtils.getCursorPageByMysql(this, request, wrapper -> {
-//            wrapper.eq(User::getActiveStatus, online.getStatus());//筛选上线或者离线的
-//            wrapper.in(CollectionUtils.isNotEmpty(memberUidList), User::getId, memberUidList);//普通群对uid列表做限制
-//        }, User::getLastOptTime);
-//    }
 
 }

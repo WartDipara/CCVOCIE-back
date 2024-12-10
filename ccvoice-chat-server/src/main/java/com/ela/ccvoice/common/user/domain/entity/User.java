@@ -37,24 +37,25 @@ public class User implements Serializable {
      */
     @TableField("name")
     private String name;
-
+    /**
+     * 用户密码
+     */
+    @TableField("password")
+    private String password;
     /**
      * 用户头像
      */
     @TableField("avatar")
     private String avatar;
 
+    @TableField("email")
+    private String email;
+
     /**
      * 性别 1为男性，2为女性
      */
     @TableField("sex")
     private Integer sex;
-
-    /**
-     * 微信openid用户标识
-     */
-    @TableField("open_id")
-    private String openId;
 
     /**
      * 在线状态 1在线 2离线
@@ -67,18 +68,6 @@ public class User implements Serializable {
      */
     @TableField("last_opt_time")
     private Date lastOptTime;
-
-    /**
-     * ip信息
-     */
-    @TableField("ip_info")
-    private String ipInfo;
-
-    /**
-     * 佩戴的徽章id
-     */
-    @TableField("item_id")
-    private Long itemId;
 
     /**
      * 使用状态 0.正常 1拉黑

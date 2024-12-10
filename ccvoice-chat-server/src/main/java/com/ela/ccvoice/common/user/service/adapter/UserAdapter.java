@@ -9,16 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class UserAdapter {
-    /**
-     * 构建用户
-     * @param openId
-     * @return
-     */
-    public static User buildUser(String openId) {
-        User user = new User();
-        user.setOpenId(openId);
-        return user;
-    }
 
     /**
      * 授权用户

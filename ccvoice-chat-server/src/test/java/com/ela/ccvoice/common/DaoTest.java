@@ -3,15 +3,17 @@ package com.ela.ccvoice.common;
 import cn.hutool.core.util.RandomUtil;
 import com.ela.ccvoice.common.common.utils.JwtUtils;
 import com.ela.ccvoice.common.user.dao.UserDao;
-import com.ela.ccvoice.common.user.domain.entity.User;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.junit.jupiter.api.Test;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.messaging.Message;
 
 @SpringBootTest
 @Slf4j
@@ -24,15 +26,8 @@ public class DaoTest {
     private RedisTemplate redisTemplate;
     @Autowired
     private RedissonClient redissonClient;
-    @Test
-    public void test() {
-        User byId = userDao.getById(1);
-        User insert = new User();
-        insert.setName("11");
-        insert.setOpenId("123");
-        boolean save =userDao.save(insert);
-        System.out.println(save);
-    }
+    @Autowired
+    private RocketMQTemplate rocketMQTemplate;
 
     @Test
     public void jwt(){
@@ -67,5 +62,11 @@ public class DaoTest {
     @Test
     public void normalTest(){
         System.out.println(RandomUtil.randomInt(100000, 999999));
+    }
+
+    @Test
+    public void sendMQ() {
+        Message<String> build = MessageBuilder.withPayload("123").build();
+        rocketMQTemplate.send("test-topic", build);
     }
 }

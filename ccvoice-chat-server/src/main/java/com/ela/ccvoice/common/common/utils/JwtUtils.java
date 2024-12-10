@@ -3,6 +3,7 @@ package com.ela.ccvoice.common.common.utils;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import lombok.extern.slf4j.Slf4j;
@@ -34,11 +35,10 @@ public class JwtUtils {
      * @return
      */
     public String createToken(Long uid) {
-        String token = JWT.create() //header
+        return JWT.create() //header
                 .withClaim(UID_CLAIM, uid) //只有一个uid，其余要去redis查  payload
                 .withClaim(CREATE_TIME, new Date()) //payload
-                .sign(Algorithm.HMAC256(secret)); //签名signature
-        return token;
+                .sign(Algorithm.HMAC256(secret));
     }
 
     /**
@@ -49,14 +49,17 @@ public class JwtUtils {
      */
     public Map<String, Claim> verifyToken(String token) {
         if (token.isEmpty()) {
+            log.warn("Token is empty or null");
             return null;
         }
         try {
             JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(secret)).build();
             DecodedJWT decodedJWT = jwtVerifier.verify(token);
             return decodedJWT.getClaims();
-        } catch (Exception ex) {
-            log.error("decode error,token:{}", token, ex);
+        } catch (JWTVerificationException e) {
+            log.error("Token verification failed: {}", e.getMessage(), e);
+        } catch (Exception e) {
+            log.error("An unexpected error occurred while decoding the token: {}", e.getMessage(), e);
         }
         return null;
     }
@@ -70,17 +73,8 @@ public class JwtUtils {
     public Long getUid(String token) {
         //optional 优化判断和避免nullPointerException
         return Optional.ofNullable(verifyToken(token))
-                .map(map->map.get(UID_CLAIM))
+                .map(map -> map.get(UID_CLAIM))
                 .map(Claim::asLong)
                 .orElse(null);
-        //    Map<String, Claim> claims = verifyToken(token);
-        //    if (claims == null) {
-        //        return null;
-        //    }
-        //    Claim uidClaim = claims.get(UID_CLAIM);
-        //    if (uidClaim == null) {
-        //        return null;
-        //    }
-        //    return uidClaim.asLong();
     }
 }

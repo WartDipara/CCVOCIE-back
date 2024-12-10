@@ -1,5 +1,6 @@
 package com.ela.ccvoice.common.user.service;
 
+import com.ela.ccvoice.common.user.domain.dto.UserRegInfoDTO;
 import com.ela.ccvoice.common.user.domain.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -12,5 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2024-10-29
  */
 public interface UserService {
-    void register(User user);
+    void register(UserRegInfoDTO userRegInfoDTO);
 }

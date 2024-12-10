@@ -6,6 +6,7 @@ import lombok.Data;
 public class UserInfoDto {
     private String avatar; //url for head icon
     private String nickName;
+    private String email;
     private Integer sex;
 
     @Override
@@ -13,6 +14,7 @@ public class UserInfoDto {
         return "UserInfoDto{" +
                 "avatar='" + avatar + '\'' +
                 ", nickName='" + nickName + '\'' +
+                ", email='" + email + '\'' +
                 ", sex=" + sex +
                 '}';
     }
