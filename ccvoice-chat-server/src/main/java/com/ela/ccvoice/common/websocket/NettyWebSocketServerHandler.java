@@ -45,7 +45,7 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
             IdleStateEvent event = (IdleStateEvent) evt;
             if(event.state() == IdleState.READER_IDLE){
                 //如果是读空闲，则要求关闭连接
-                System.out.println("读空闲，客户端已经30s没有响应了。");
+                System.out.println("读空闲，客户端已经30s没有响应，自动断开连接。");
                 //应该对客户端进行下线操作
                 //TODO 用户下线逻辑 目前只做了简单的断开连接
                 userOffline(ctx.channel());

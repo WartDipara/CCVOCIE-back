@@ -3,11 +3,62 @@ package com.ela.ccvoice.common.common.constant;
 public class RedisKey {
     private static final String BASE_KEY = "ccvoice:chat";
     /**
-     * 用户token的key
+     * 在线用户列表
      */
-    public static final String USER_TOKEN_KEY = "userToken:uid_%d";
+    public static final String ONLINE_UID_ZET = "online";
 
-    public static String getKey(String key, Object... obj) {
-        return BASE_KEY + String.format(key, obj);
+    /**
+     * 离线用户列表
+     */
+    public static final String OFFLINE_UID_ZET = "offline";
+
+    /**
+     * 热门房间列表
+     */
+    public static final String HOT_ROOM_ZET = "hotRoom";
+
+    /**
+     * 用户信息
+     */
+    public static final String USER_INFO_STRING = "userInfo:uid_%d";
+
+    /**
+     * 用户token
+     */
+    public static final String USER_TOKEN_STRING = "userToken:uid_%d";
+
+    /**
+     * 房间详情
+     */
+    public static final String ROOM_INFO_STRING = "roomInfo:roomId_%d";
+
+    /**
+     * 群组详情
+     */
+    public static final String GROUP_INFO_STRING = "groupInfo:roomId_%d";
+
+    /**
+     * 群组详情
+     */
+    public static final String GROUP_FRIEND_STRING = "groupFriend:roomId_%d";
+
+    /**
+     * 用户的信息更新时间
+     */
+    public static final String USER_MODIFY_STRING = "userModify:uid_%d";
+
+    /**
+     * 用户的信息汇总
+     */
+    public static final String USER_SUMMARY_STRING = "userSummary:uid_%d";
+
+    /**
+     * 用户上次使用GLM使用时间
+     */
+    public static final String USER_GLM2_TIME_LAST = "userGLM2UseTime:uid_%d";
+
+    public static String getKey(String key, Object... objects) {
+        return BASE_KEY + String.format(key, objects);
     }
+
 }

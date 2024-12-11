@@ -3,33 +3,34 @@ package com.ela.ccvoice.common.user.domain.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.time.LocalDateTime;
+
 import com.baomidou.mybatisplus.annotation.TableField;
+
 import java.io.Serializable;
 import java.util.Date;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
+import lombok.*;
 
 /**
- * <p>
  * 用户表
- * </p>
- *
- * @author <a href="https://github.com/WartDipara">ela</a>
- * @since 2024-10-29
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("user")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName(value = "user", autoResultMap = true)
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    public static Long UID_SYSTEM = 1L;//系统uid
     /**
      * 用户id
      */
-      @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -87,5 +88,17 @@ public class User implements Serializable {
     @TableField("update_time")
     private Date updateTime;
 
+//    /**
+//     * 最后上下线时间
+//     */
+//    @TableField(value = "ip_info", typeHandler = JacksonTypeHandler.class)
+//    private IpInfo ipInfo;
+
+//    public void refreshIp(String ip) {
+//        if (ipInfo == null) {
+//            ipInfo = new IpInfo();
+//        }
+//        ipInfo.refreshIp(ip);
+//    }
 
 }

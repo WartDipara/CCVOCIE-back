@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Getter
 public enum WSRequestTypeEnum {
-    LOGIN(1, "请求登录二维码"),
+    LOGIN(1, "登录"),
     HEARTBEAT(2, "心跳包"),
     AUTHORIZE(3, "登录认证"),
-            ;
+    ;
     private int type;
     private String desc;
     private static Map<Integer, WSRequestTypeEnum> cache;

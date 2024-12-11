@@ -2,22 +2,33 @@ package com.ela.ccvoice.common.user.service;
 
 public interface LoginService {
     /**
-     * 刷新token有效期,如果有需要的话
+     * 校验token是不是有效
+     *
      * @param token
+     * @return
      */
-    void renewalToken(String token);
+    boolean verify(String token);
 
     /**
-     * 登陆成功 获得token
+     * 刷新token有效期
+     *
+     * @param token
+     */
+    void renewalTokenIfNecessary(String token);
+
+    /**
+     * 登录成功，获取token
+     *
      * @param uid
-     * @return token
+     * @return 返回token
      */
     String login(Long uid);
 
     /**
      * 如果token有效，返回uid
+     *
      * @param token
-     * @return uid
+     * @return
      */
     Long getValidUid(String token);
 }
