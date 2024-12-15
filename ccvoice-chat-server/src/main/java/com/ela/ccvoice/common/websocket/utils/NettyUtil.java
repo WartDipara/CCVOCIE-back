@@ -29,11 +29,11 @@ public class NettyUtil {
     /**
      * 获取
      * @param channel
-     * @param ip
+     * @param key
      * @return
      * @param <T>
      */
-    public static <T> T getAttr(Channel channel, AttributeKey<T> ip) {
-        return channel.attr(ip).get();
+    public static <T> T getAttr(Channel channel, AttributeKey<T> key) {
+        return channel.attr(key).get();
     }
 }

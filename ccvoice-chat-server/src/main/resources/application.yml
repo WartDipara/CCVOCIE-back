@@ -63,6 +63,7 @@ rocketmq:
       erbadagang-consumer-group:
         topic1: false # 关闭 test-consumer-group 对 topic1 的监听消费
 
-
-
-
+logging:
+  file:
+    path: /logs/
+    name: ccvoice-ser

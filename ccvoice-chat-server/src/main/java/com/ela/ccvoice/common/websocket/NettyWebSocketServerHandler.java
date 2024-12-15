@@ -1,11 +1,13 @@
 package com.ela.ccvoice.common.websocket;
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
 import com.ela.ccvoice.common.websocket.domain.vo.request.WsLoginRequest;
 import com.ela.ccvoice.common.websocket.service.WebSocketService;
 import com.ela.ccvoice.common.websocket.domain.enums.WSRequestTypeEnum;
 import com.ela.ccvoice.common.websocket.domain.vo.request.WSBaseRequest;
+import com.ela.ccvoice.common.websocket.utils.NettyUtil;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
@@ -14,6 +16,8 @@ import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.util.Attribute;
+import io.netty.util.AttributeKey;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -41,14 +45,16 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
     @Override
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
         if (evt instanceof WebSocketServerProtocolHandler.HandshakeComplete) {
-            System.out.println("握手成功");
+            String token = NettyUtil.getAttr(ctx.channel(), NettyUtil.TOKEN);
+            if(StrUtil.isNotBlank(token)){
+                webSocketService.authorization(ctx.channel(), token);
+            }
         } else if (evt instanceof IdleStateEvent) {
             IdleStateEvent event = (IdleStateEvent) evt;
             if(event.state() == IdleState.READER_IDLE){
                 //如果是读空闲，则要求关闭连接
                 System.out.println("读空闲，客户端已经60s没有响应，自动断开连接。");
                 //应该对客户端进行下线操作
-                //TODO 用户下线逻辑 目前只做了简单的断开连接
                 userOffline(ctx.channel());
             }
         }

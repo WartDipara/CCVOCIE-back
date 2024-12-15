@@ -1,5 +1,6 @@
 package com.ela.ccvoice.common.websocket;
 
+import com.ela.ccvoice.common.websocket.service.MyWsHeaderCollectHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -64,6 +65,8 @@ public class NettyWebSocketServer {
                         pipeline.addLast(new HttpServerCodec());
                         // 以块的方式写，添加chunkedWriterHandler 处理器
                         pipeline.addLast(new ChunkedWriteHandler());
+                        // 保留请求头
+                        pipeline.addLast(new MyWsHeaderCollectHandler());
                         /**
                          * 聚合多个HttpObject为单个 FullHttpRequest/Response
                          * http的传输是分段传输

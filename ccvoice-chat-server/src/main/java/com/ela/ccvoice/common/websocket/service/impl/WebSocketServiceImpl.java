@@ -105,6 +105,11 @@ public class WebSocketServiceImpl implements WebSocketService {
         }
     }
 
+    @Override
+    public void authorization(Channel channel, String token) {
+        handleAuthorization(channel,token);
+    }
+
     public void handleAuthorization(Channel channel, String token){
         Long uid = loginService.getValidUid(token);
         if(Objects.nonNull(uid)){
@@ -176,27 +181,27 @@ public class WebSocketServiceImpl implements WebSocketService {
 
 
 
-    /**
-     * 检测登录是否成功
-     *
-     * @param code
-     * @return
-     */
-    public boolean scanLoginSuccess(Integer code, UserLoginInfoDTO userLoginInfoDTO) {
-        //确认连接在该机器
-        Channel channel = WAIT_LOGIN_MAP.getIfPresent(code);
-        if (Objects.isNull(channel)) {
-            return Boolean.FALSE;
-        }
-        User user = userDao.getByName(userLoginInfoDTO.getName());
-        //移除code
-        WAIT_LOGIN_MAP.invalidate(code);
-        //调用用户登录模块
-        String token = loginService.login(user.getId());
-        //用户登录
-        loginSuccess(channel, user, token);
-        return Boolean.TRUE;
-    }
+//    /**
+//     * 检测登录是否成功
+//     *
+//     * @param code
+//     * @return
+//     */
+//    public boolean scanLoginSuccess(Integer code, UserLoginInfoDTO userLoginInfoDTO) {
+//        //确认连接在该机器
+//        Channel channel = WAIT_LOGIN_MAP.getIfPresent(code);
+//        if (Objects.isNull(channel)) {
+//            return Boolean.FALSE;
+//        }
+//        User user = userDao.getByName(userLoginInfoDTO.getName());
+//        //移除code
+//        WAIT_LOGIN_MAP.invalidate(code);
+//        //调用用户登录模块
+//        String token = loginService.login(user.getId());
+//        //用户登录
+//        loginSuccess(channel, user, token);
+//        return Boolean.TRUE;
+//    }
 
     /**
      * 如果在线列表不存在，就先把该channel放进在线列表

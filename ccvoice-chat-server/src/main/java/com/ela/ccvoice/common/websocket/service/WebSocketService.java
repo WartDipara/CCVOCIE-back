@@ -7,6 +7,7 @@ import io.netty.channel.Channel;
 public interface WebSocketService {
     void connect(Channel channel);
     void handleLoginReq(Channel channel, WsLoginRequest wsLoginRequest);
-    boolean scanLoginSuccess(Integer code, UserLoginInfoDTO userLoginInfoDTO);
+//    boolean scanLoginSuccess(Integer code, UserLoginInfoDTO userLoginInfoDTO);
     void remove(Channel channel);
+    void authorization(Channel channel, String token);
 }

@@ -6,12 +6,6 @@ import com.ela.ccvoice.common.websocket.domain.vo.response.WSBaseResponse;
 import com.ela.ccvoice.common.websocket.domain.vo.response.WSLoginSuccess;
 
 public class WebSocketAdapter {
-    public static WSBaseResponse<?> buildResp(String msg){
-        WSBaseResponse<String> resp=new WSBaseResponse<>();
-        resp.setType(WSResponseTypeEnum.LOGIN_URL.getType());
-        resp.setData(msg);
-        return resp;
-    }
 
     public static WSBaseResponse<WSLoginSuccess> buildLoginSuccessResp(User user, String token, boolean hasPower) {
         WSBaseResponse<WSLoginSuccess> wsBaseResp = new WSBaseResponse<>();

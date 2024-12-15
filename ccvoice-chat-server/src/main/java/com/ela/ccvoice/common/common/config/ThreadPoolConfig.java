@@ -1,8 +1,6 @@
 package com.ela.ccvoice.common.common.config;
 
 import com.ela.ccvoice.common.common.factory.MyThreadFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
