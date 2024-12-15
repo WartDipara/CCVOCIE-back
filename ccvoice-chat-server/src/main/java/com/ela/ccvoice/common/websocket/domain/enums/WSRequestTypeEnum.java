@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 public enum WSRequestTypeEnum {
     LOGIN(1, "登录"),
     HEARTBEAT(2, "心跳包"),
-    AUTHORIZE(3, "登录认证"),
     ;
     private int type;
     private String desc;

@@ -4,13 +4,12 @@ import com.ela.ccvoice.common.user.domain.entity.User;
 import com.ela.ccvoice.common.websocket.domain.enums.WSResponseTypeEnum;
 import com.ela.ccvoice.common.websocket.domain.vo.response.WSBaseResponse;
 import com.ela.ccvoice.common.websocket.domain.vo.response.WSLoginSuccess;
-import com.ela.ccvoice.common.websocket.domain.vo.response.WSLoginUrl;
 
 public class WebSocketAdapter {
-    public static WSBaseResponse<?> buildResp(String customerLoginUrl){
-        WSBaseResponse<WSLoginUrl> resp=new WSBaseResponse<>();
+    public static WSBaseResponse<?> buildResp(String msg){
+        WSBaseResponse<String> resp=new WSBaseResponse<>();
         resp.setType(WSResponseTypeEnum.LOGIN_URL.getType());
-        resp.setData(new WSLoginUrl(customerLoginUrl));
+        resp.setData(msg);
         return resp;
     }
 
@@ -26,5 +25,11 @@ public class WebSocketAdapter {
                 .build();
         wsBaseResp.setData(wsLoginSuccess);
         return wsBaseResp;
+    }
+    public static WSBaseResponse<?> buildInvalidTokenResp(){
+        WSBaseResponse<String> resp=new WSBaseResponse<>();
+        resp.setType(WSResponseTypeEnum.INVALIDATE_TOKEN.getType());
+        resp.setData(WSResponseTypeEnum.INVALIDATE_TOKEN.getDesc());
+        return resp;
     }
 }

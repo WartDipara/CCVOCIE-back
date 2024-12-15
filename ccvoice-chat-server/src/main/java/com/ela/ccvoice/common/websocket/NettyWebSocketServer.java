@@ -59,7 +59,7 @@ public class NettyWebSocketServer {
                         //3os里没有客户端向服务器发送心跳则关闭链接
                         //心跳包的存在是必要的，因为客户端可能没有来得及挥手直接下线了（断电情况），造成服务器一直在维护这个客户端链接，浪费资源
                         //三个参数，（读空闲，写空闲，全局空闲） ，读参数一般是服务器用的，用来判断能否接受到客户端的信息，写参数一般客户端用的，用来判断是否发送了心跳包，全局参数一般不用，
-                        pipeline.addLast(new IdleStateHandler(30, 0, 0));
+                        pipeline.addLast(new IdleStateHandler(60, 0, 0));
                         // http协议的encode和decode
                         pipeline.addLast(new HttpServerCodec());
                         // 以块的方式写，添加chunkedWriterHandler 处理器

@@ -2,6 +2,7 @@ package com.ela.ccvoice.common.websocket;
 
 import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
+import com.ela.ccvoice.common.websocket.domain.vo.request.WsLoginRequest;
 import com.ela.ccvoice.common.websocket.service.WebSocketService;
 import com.ela.ccvoice.common.websocket.domain.enums.WSRequestTypeEnum;
 import com.ela.ccvoice.common.websocket.domain.vo.request.WSBaseRequest;
@@ -45,7 +46,7 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
             IdleStateEvent event = (IdleStateEvent) evt;
             if(event.state() == IdleState.READER_IDLE){
                 //如果是读空闲，则要求关闭连接
-                System.out.println("读空闲，客户端已经30s没有响应，自动断开连接。");
+                System.out.println("读空闲，客户端已经60s没有响应，自动断开连接。");
                 //应该对客户端进行下线操作
                 //TODO 用户下线逻辑 目前只做了简单的断开连接
                 userOffline(ctx.channel());
@@ -63,21 +64,21 @@ public class NettyWebSocketServerHandler extends SimpleChannelInboundHandler<Tex
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, TextWebSocketFrame textWebSocketFrame) throws Exception {
-        String text = textWebSocketFrame.text();//获取ws 新消息
+    protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) throws Exception {
+        String text = msg.text();//获取ws 新消息
         //**可以透过该方法获取到从前端发来的所有消息 根据type的值来做不同操作
         System.out.println(text);
         WSBaseRequest wsBaseRequest = JSONUtil.toBean(text, WSBaseRequest.class);
         switch (WSRequestTypeEnum.of(wsBaseRequest.getType())) {
             case LOGIN:
-                webSocketService.handleLoginReq(channelHandlerContext.channel());
-//                System.out.println("登录test");
-//                //类型必须是TextWebsocketFrame，这是 ws 协议要求的。
-//                channelHandlerContext.channel().writeAndFlush(new TextWebSocketFrame("测试channel返回"));
+                //连同认证也做在这里面，透过传进来的token是否为空进行判断
+                WsLoginRequest wsLoginRequest = JSONUtil.toBean(text, WsLoginRequest.class);
+                webSocketService.handleLoginReq(ctx.channel(),wsLoginRequest);
+                break;
             case HEARTBEAT:
                 break;
-            case AUTHORIZE:
-                break;
+            default:
+                log.info("unknown type");
         }
     }
 }

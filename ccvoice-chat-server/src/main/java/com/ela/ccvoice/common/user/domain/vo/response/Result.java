@@ -3,10 +3,12 @@ package com.ela.ccvoice.common.user.domain.vo.response;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.Getter;
 
 @Data
 @ApiModel("基础APi返回类型")
 public class Result<T> {
+    @Getter
     @ApiModelProperty("成功或失败 标识符")
     private boolean success;
     @ApiModelProperty("错误代码")
@@ -46,9 +48,5 @@ public class Result<T> {
         result.setMsg(msg);
         result.setCode(500);
         return result;
-    }
-
-    public boolean isSuccess() {
-        return this.success;
     }
 }

@@ -4,17 +4,14 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONUtil;
-import com.ela.ccvoice.common.common.constant.RedisKey;
 import com.ela.ccvoice.common.common.event.UserOfflineEvent;
-import com.ela.ccvoice.common.common.event.UserOnlineEvent;
-import com.ela.ccvoice.common.common.utils.RedisUtils;
 import com.ela.ccvoice.common.user.dao.UserDao;
 import com.ela.ccvoice.common.user.domain.dto.UserLoginInfoDTO;
 import com.ela.ccvoice.common.user.domain.entity.User;
-import com.ela.ccvoice.common.user.domain.enums.RoleEnum;
-import com.ela.ccvoice.common.user.service.IRoleService;
+import com.ela.ccvoice.common.user.domain.vo.response.LoginResp;
 import com.ela.ccvoice.common.user.service.LoginService;
-import com.ela.ccvoice.common.user.service.cache.UserCache;
+import com.ela.ccvoice.common.user.service.UserService;
+import com.ela.ccvoice.common.websocket.domain.vo.request.WsLoginRequest;
 import com.ela.ccvoice.common.websocket.service.WebSocketService;
 import com.ela.ccvoice.common.websocket.service.adapter.WebSocketAdapter;
 import com.ela.ccvoice.common.websocket.domain.vo.response.WSBaseResponse;
@@ -34,16 +31,17 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class WebSocketServiceImpl implements WebSocketService {
     @Autowired
+    private UserService userService;
+    @Autowired
     private LoginService loginService;
-    @Autowired
-    private UserCache userCache;
-    @Autowired
-    private IRoleService iRoleService;
+//    @Autowired
+//    private UserCache userCache;
+//    @Autowired
+//    private IRoleService iRoleService;
     @Autowired
     private ApplicationEventPublisher applicationEventPublisher;
 
@@ -86,20 +84,72 @@ public class WebSocketServiceImpl implements WebSocketService {
         ONLINE_WS_MAP.put(channel, new WSChannelExtraDTO());
     }
 
+
+
     /**
      * 使用ws登录，传入type1的情况
      * 采用咖啡因的缓存，避免内存溢出，做过期策略
      *
-     * @param channel
+     * @param channel , WsLoginRequest
      */
     @Override
-    public void handleLoginReq(Channel channel) {
-        //生成随机码
+    public void handleLoginReq(Channel channel, WsLoginRequest wsLoginRequest) {
+        // 生成随机码
         Integer code = generateLoginCode(channel);
-        //传入登录的接口
-        String customerLoginUrl = "http://localhost:8080/auth/login";
-        //把url发送给前端
-        sendMsg(channel, WebSocketAdapter.buildResp(customerLoginUrl));
+        if (wsLoginRequest.getToken() != null) {
+            //验证
+            handleAuthorization(channel, wsLoginRequest.getToken());
+        } else {
+            // 用户名密码登录
+            handleUsernamePasswordLogin(channel, wsLoginRequest.getUsername(), wsLoginRequest.getPassword());
+        }
+    }
+
+    public void handleAuthorization(Channel channel, String token){
+        Long uid = loginService.getValidUid(token);
+        if(Objects.nonNull(uid)){
+            User user = userDao.getById(uid);
+            loginSuccess(channel,user,token);
+        }else{
+            //token已经过期
+            sendMsg(channel,WebSocketAdapter.buildInvalidTokenResp());
+        }
+    }
+
+    /**
+     * 处理用户名密码登录
+     */
+    private void handleUsernamePasswordLogin(Channel channel, String username, String password) {
+        UserLoginInfoDTO userLoginInfoDTO = buildUserLoginInfoDTO(username, password);
+
+        // 调用用户服务进行登录验证
+        LoginResp loginResp = userService.login(userLoginInfoDTO);
+
+        if (loginResp.isSuccess()) {
+            User user = userDao.getById(loginResp.getUid());
+            loginSuccess(channel, user, loginResp.getToken());
+        } else {
+            processLoginFail(channel, loginResp.getMessage());
+        }
+    }
+
+    /**
+     * 构造用户登录信息 DTO
+     */
+    private UserLoginInfoDTO buildUserLoginInfoDTO(String username, String password) {
+        UserLoginInfoDTO userLoginInfoDTO = new UserLoginInfoDTO();
+        userLoginInfoDTO.setName(username);
+        userLoginInfoDTO.setPassword(password);
+        return userLoginInfoDTO;
+    }
+
+    /**
+     * 处理登录失败逻辑
+     */
+    private void processLoginFail(Channel channel, String errorMessage) {
+        WSBaseResponse<String> resp = new WSBaseResponse<>();
+        resp.setData(errorMessage);
+        sendMsg(channel, resp);
     }
 
     private void sendMsg(Channel channel, WSBaseResponse<?> resp) {
@@ -130,7 +180,6 @@ public class WebSocketServiceImpl implements WebSocketService {
      * 检测登录是否成功
      *
      * @param code
-     * @param uid
      * @return
      */
     public boolean scanLoginSuccess(Integer code, UserLoginInfoDTO userLoginInfoDTO) {
@@ -178,17 +227,19 @@ public class WebSocketServiceImpl implements WebSocketService {
     private void loginSuccess(Channel channel, User user, String token) {
         //更新上线列表
         online(channel, user.getId());
+        //todo
         //返回给用户登录成功
-        boolean hasPower = iRoleService.hasPower(user.getId(), RoleEnum.CHAT_MANAGER);
+//        boolean hasPower = iRoleService.hasPower(user.getId(), RoleEnum.CHAT_MANAGER);
         //发送给对应的用户
-        sendMsg(channel, WebSocketAdapter.buildLoginSuccessResp(user, token, hasPower));
+//        sendMsg(channel, WebSocketAdapter.buildLoginSuccessResp(user, token, hasPower));
+        sendMsg(channel, WebSocketAdapter.buildLoginSuccessResp(user, token, Boolean.FALSE));
         //发送用户上线事件
-        boolean online = userCache.isOnline(user.getId());
-        if (!online) {
-            user.setLastOptTime(new Date());
-//            user.refreshIp(NettyUtil.getAttr(channel, NettyUtil.IP));
-            applicationEventPublisher.publishEvent(new UserOnlineEvent(this, user));
-        }
+//        boolean online = userCache.isOnline(user.getId());
+//        if (!online) {
+//            user.setLastOptTime(new Date());
+////            user.refreshIp(NettyUtil.getAttr(channel, NettyUtil.IP));
+//            applicationEventPublisher.publishEvent(new UserOnlineEvent(this, user));
+//        }
     }
 
     /**

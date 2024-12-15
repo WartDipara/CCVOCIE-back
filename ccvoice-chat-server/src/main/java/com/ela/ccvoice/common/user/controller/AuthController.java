@@ -38,6 +38,12 @@ public class AuthController {
         return ApiResult.success(resp.getMessage());
     }
 
+    /**
+     *
+     * 改写了ws模式，这个接口不一定用的上
+     * @param userLoginInfo
+     * @return
+     */
     @ApiOperation("用户登录")
     @PostMapping("/login")
     public ApiResult<?> login(@RequestBody UserLoginInfoDTO userLoginInfo) {

@@ -1,625 +1,117 @@
-|INFO|2024-12-11 00:14:57.358|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 28424 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 00:14:57.364|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 00:14:58.274|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 00:14:58.276|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 00:14:58.308|main||uid=|Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 00:14:58.806|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 00:14:58.814|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 00:14:58.815|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 00:14:58.941|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 00:14:58.941|main||uid=|Root WebApplicationContext: initialization completed in 1537 ms|
-|WARN|2024-12-11 00:15:00.056|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x7e6f1bfe]'|
-|INFO|2024-12-11 00:15:00.062|nioEventLoopGroup-2-1||uid=|[id: 0x7e6f1bfe] REGISTERED|
-|INFO|2024-12-11 00:15:00.063|nioEventLoopGroup-2-1||uid=|[id: 0x7e6f1bfe] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 00:15:00.065|nioEventLoopGroup-2-1||uid=|[id: 0x7e6f1bfe, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 00:15:00.269|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 00:15:00.773|redisson-netty-4-16||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 00:15:01.650|redisson-netty-4-20||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 00:15:01.779|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|INFO|2024-12-11 00:15:01.901|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 00:15:04.486|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 00:15:04.486|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 00:15:04.509|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 00:15:04.510|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 00:15:04.512|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 00:15:04.533|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 00:15:04.631|main||uid=|Started ServerApplication in 7.658 seconds (JVM running for 8.403)|
-|INFO|2024-12-11 00:15:05.460|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 00:15:05.460|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 00:15:05.461|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 00:15:05.461|RMI TCP Connection(3)-172.18.128.1||uid=|Completed initialization in 1 ms|
-|INFO|2024-12-11 00:15:05.726|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 00:15:55.595|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 00:15:55.596|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 00:15:55.762|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 00:15:55.918|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 00:15:55.918|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 00:15:56.066|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 00:15:56.066|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 00:15:56.464|nioEventLoopGroup-2-1||uid=|[id: 0x7e6f1bfe, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 00:15:56.464|nioEventLoopGroup-2-1||uid=|[id: 0x7e6f1bfe, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 00:15:58.535|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 00:15:58.536|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 00:15:58.543|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 11:10:59.891|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 15004 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 11:10:59.893|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 11:11:01.550|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 11:11:01.553|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 11:11:01.602|main||uid=|Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 11:11:02.129|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 11:11:02.137|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 11:11:02.137|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 11:11:02.307|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 11:11:02.307|main||uid=|Root WebApplicationContext: initialization completed in 2377 ms|
-|WARN|2024-12-11 11:11:03.455|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x13c92d9a]'|
-|INFO|2024-12-11 11:11:03.462|nioEventLoopGroup-2-1||uid=|[id: 0x13c92d9a] REGISTERED|
-|INFO|2024-12-11 11:11:03.463|nioEventLoopGroup-2-1||uid=|[id: 0x13c92d9a] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 11:11:03.464|nioEventLoopGroup-2-1||uid=|[id: 0x13c92d9a, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 11:11:03.670|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 11:11:04.156|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:11:04.656|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:11:04.778|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|INFO|2024-12-11 11:11:04.894|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 11:11:07.482|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:11:07.483|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 11:11:08.137|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:11:08.137|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 11:11:08.159|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 11:11:08.160|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 11:11:08.162|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 11:11:08.181|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 11:11:08.266|main||uid=|Started ServerApplication in 8.841 seconds (JVM running for 9.87)|
-|INFO|2024-12-11 11:11:08.963|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:11:08.963|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:11:08.964|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 11:11:08.965|RMI TCP Connection(3)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 11:11:09.282|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 11:11:13.730|ccvoice-executor-1||uid=|用户test1注册成功|
-|INFO|2024-12-11 11:26:39.866|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:26:39.866|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:26:39.999|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:26:39.999|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:26:40.158|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:26:40.158|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:26:40.305|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:26:40.306|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:26:40.453|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:26:40.454|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:26:40.542|nioEventLoopGroup-2-1||uid=|[id: 0x13c92d9a, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 11:26:40.542|nioEventLoopGroup-2-1||uid=|[id: 0x13c92d9a, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 11:26:42.615|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 11:26:42.616|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 11:26:42.625|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 11:27:09.409|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 14012 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 11:27:09.411|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 11:27:10.794|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 11:27:10.796|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 11:27:10.836|main||uid=|Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 11:27:11.473|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 11:27:11.480|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 11:27:11.481|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 11:27:11.611|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 11:27:11.611|main||uid=|Root WebApplicationContext: initialization completed in 2164 ms|
-|WARN|2024-12-11 11:27:12.786|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xb0b9bf06]'|
-|INFO|2024-12-11 11:27:12.793|nioEventLoopGroup-2-1||uid=|[id: 0xb0b9bf06] REGISTERED|
-|INFO|2024-12-11 11:27:12.794|nioEventLoopGroup-2-1||uid=|[id: 0xb0b9bf06] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 11:27:12.795|nioEventLoopGroup-2-1||uid=|[id: 0xb0b9bf06, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 11:27:13.010|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 11:27:13.494|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:27:13.992|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:27:14.128|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|INFO|2024-12-11 11:27:14.247|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|WARN|2024-12-11 11:27:15.863|main||uid=|
+|INFO|2024-12-15 20:30:27.821|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 13480 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
+|INFO|2024-12-15 20:30:27.832|main||uid=|The following 1 profile is active: "prod"|
+|INFO|2024-12-15 20:30:29.925|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
+|INFO|2024-12-15 20:30:29.928|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
+|INFO|2024-12-15 20:30:29.974|main||uid=|Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.|
+|INFO|2024-12-15 20:30:30.576|main||uid=|Tomcat initialized with port(s): 8080 (http)|
+|INFO|2024-12-15 20:30:30.584|main||uid=|Starting service [Tomcat]|
+|INFO|2024-12-15 20:30:30.585|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
+|INFO|2024-12-15 20:30:30.761|main||uid=|Initializing Spring embedded WebApplicationContext|
+|INFO|2024-12-15 20:30:30.761|main||uid=|Root WebApplicationContext: initialization completed in 2864 ms|
+|WARN|2024-12-15 20:30:32.435|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xdc101376]'|
+|INFO|2024-12-15 20:30:32.443|nioEventLoopGroup-2-1||uid=|[id: 0xdc101376] REGISTERED|
+|INFO|2024-12-15 20:30:32.444|nioEventLoopGroup-2-1||uid=|[id: 0xdc101376] BIND: 0.0.0.0/0.0.0.0:8090|
+|INFO|2024-12-15 20:30:32.445|nioEventLoopGroup-2-1||uid=|[id: 0xdc101376, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
+|INFO|2024-12-15 20:30:32.656|main||uid=|Redisson 3.17.1|
+|INFO|2024-12-15 20:30:33.061|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
+|INFO|2024-12-15 20:30:33.330|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
+|INFO|2024-12-15 20:30:33.483|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
+|WARN|2024-12-15 20:30:33.619|main||uid=|
 
-Using generated security password: d9ccf422-e7b9-4d2c-93fe-4c54fcac9610
+Using generated security password: 3c7e5729-3dd2-4215-8797-26b015b1e9c5
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 |
-|INFO|2024-12-11 11:27:15.976|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62883f8a, org.springframework.security.web.context.SecurityContextPersistenceFilter@b808af5, org.springframework.security.web.header.HeaderWriterFilter@b34c7c9, org.springframework.web.filter.CorsFilter@36665c11, org.springframework.security.web.csrf.CsrfFilter@20231384, org.springframework.security.web.authentication.logout.LogoutFilter@18513c23, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@67e11bda, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@75b363c3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6e49b011, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@10d905c1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2fd4312a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3eee08f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a709cc7, org.springframework.security.web.session.SessionManagementFilter@1f6c4ae, org.springframework.security.web.access.ExceptionTranslationFilter@4cc4d454, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5072e638]|
-|INFO|2024-12-11 11:27:16.932|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:27:16.932|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 11:27:17.789|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:27:17.789|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 11:27:17.814|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 11:27:17.815|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 11:27:17.817|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 11:27:17.838|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 11:27:17.927|main||uid=|Started ServerApplication in 8.952 seconds (JVM running for 9.79)|
-|INFO|2024-12-11 11:27:18.302|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:27:18.303|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:27:18.304|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 11:27:18.305|RMI TCP Connection(3)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 11:27:18.542|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 11:28:09.590|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:28:09.591|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:28:09.734|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:28:09.734|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:28:09.897|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:28:09.897|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:28:10.048|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:28:10.048|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:28:10.222|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:28:10.222|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:28:10.331|nioEventLoopGroup-2-1||uid=|[id: 0xb0b9bf06, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 11:28:10.331|nioEventLoopGroup-2-1||uid=|[id: 0xb0b9bf06, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 11:28:12.421|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 11:28:12.422|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 11:28:12.430|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 11:28:15.584|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 7844 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 11:28:15.585|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 11:28:16.744|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 11:28:16.746|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 11:28:16.787|main||uid=|Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 11:28:17.467|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 11:28:17.477|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 11:28:17.477|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 11:28:17.606|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 11:28:17.606|main||uid=|Root WebApplicationContext: initialization completed in 1977 ms|
-|WARN|2024-12-11 11:28:18.875|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x9b89102e]'|
-|INFO|2024-12-11 11:28:18.883|nioEventLoopGroup-2-1||uid=|[id: 0x9b89102e] REGISTERED|
-|INFO|2024-12-11 11:28:18.884|nioEventLoopGroup-2-1||uid=|[id: 0x9b89102e] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 11:28:18.886|nioEventLoopGroup-2-1||uid=|[id: 0x9b89102e, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 11:28:19.116|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 11:28:19.614|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:28:20.126|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:28:20.268|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|INFO|2024-12-11 11:28:20.406|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|WARN|2024-12-11 11:28:22.150|main||uid=|
-
-Using generated security password: c48658f0-f5ec-4fc6-9060-55ef7b7a19f7
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-|
-|INFO|2024-12-11 11:28:22.293|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f45dfec, org.springframework.security.web.context.SecurityContextPersistenceFilter@2976ef56, org.springframework.security.web.header.HeaderWriterFilter@5bde6148, org.springframework.web.filter.CorsFilter@7c69e1e1, org.springframework.security.web.csrf.CsrfFilter@3dc55719, org.springframework.security.web.authentication.logout.LogoutFilter@5e8f0f98, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4a890fdd, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1da5c19d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7b52b18a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5604b85, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4152bd0f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e4b54d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bc6c20d, org.springframework.security.web.session.SessionManagementFilter@53ba25ff, org.springframework.security.web.access.ExceptionTranslationFilter@4045fd1f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2328ec73]|
-|INFO|2024-12-11 11:28:23.269|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:28:23.269|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 11:28:24.078|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:28:24.079|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 11:28:24.103|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 11:28:24.104|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 11:28:24.106|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 11:28:24.128|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 11:28:24.228|main||uid=|Started ServerApplication in 9.174 seconds (JVM running for 10.514)|
-|INFO|2024-12-11 11:28:24.687|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:28:24.687|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:28:24.689|RMI TCP Connection(3)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 11:28:25.023|RMI TCP Connection(5)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 11:28:25.262|RMI TCP Connection(5)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 11:34:30.891|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:34:30.892|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:34:31.032|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:34:31.032|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:34:31.194|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:34:31.195|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:34:31.342|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:34:31.342|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:34:31.498|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:34:31.499|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:34:31.590|nioEventLoopGroup-2-1||uid=|[id: 0x9b89102e, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 11:34:31.590|nioEventLoopGroup-2-1||uid=|[id: 0x9b89102e, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 11:34:33.671|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 11:34:33.672|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 11:34:33.677|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 11:34:38.599|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 12344 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 11:34:38.600|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 11:34:39.623|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 11:34:39.625|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 11:34:39.666|main||uid=|Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 11:34:40.282|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 11:34:40.290|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 11:34:40.290|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 11:34:40.420|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 11:34:40.421|main||uid=|Root WebApplicationContext: initialization completed in 1775 ms|
-|WARN|2024-12-11 11:34:41.701|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x501d0eb0]'|
-|INFO|2024-12-11 11:34:41.710|nioEventLoopGroup-2-1||uid=|[id: 0x501d0eb0] REGISTERED|
-|INFO|2024-12-11 11:34:41.711|nioEventLoopGroup-2-1||uid=|[id: 0x501d0eb0] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 11:34:41.713|nioEventLoopGroup-2-1||uid=|[id: 0x501d0eb0, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 11:34:41.969|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 11:34:42.495|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:34:43.008|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:34:43.137|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|WARN|2024-12-11 11:34:43.278|main||uid=|
-
-Using generated security password: 3b4a8c2a-92d6-4d51-b13e-df673b1f7b26
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-|
-|INFO|2024-12-11 11:34:43.380|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d0114c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@4300e240, org.springframework.security.web.header.HeaderWriterFilter@108b121f, org.springframework.security.web.authentication.logout.LogoutFilter@21c75084, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@547aaa32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7afbf2a0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40016ce1, org.springframework.security.web.session.SessionManagementFilter@2ff498b0, org.springframework.security.web.access.ExceptionTranslationFilter@3513d214, org.springframework.security.web.access.intercept.AuthorizationFilter@376af784]|
-|INFO|2024-12-11 11:34:43.395|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 11:34:46.038|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:34:46.039|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 11:34:46.877|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:34:46.877|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 11:34:46.902|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 11:34:46.903|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 11:34:46.905|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 11:34:46.927|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 11:34:47.051|main||uid=|Started ServerApplication in 8.922 seconds (JVM running for 9.924)|
-|INFO|2024-12-11 11:34:47.646|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:34:47.646|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:34:47.648|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 11:34:47.648|RMI TCP Connection(1)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 11:34:47.904|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 11:36:39.369|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:36:39.370|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:36:39.507|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:36:39.507|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:36:39.676|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:36:39.676|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:36:39.821|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:36:39.821|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:36:39.960|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 11:36:39.960|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 11:36:40.046|nioEventLoopGroup-2-1||uid=|[id: 0x501d0eb0, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 11:36:40.046|nioEventLoopGroup-2-1||uid=|[id: 0x501d0eb0, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 11:36:42.143|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 11:36:42.144|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 11:36:42.151|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 11:36:45.921|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 24656 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 11:36:45.923|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 11:36:46.870|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 11:36:46.872|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 11:36:46.911|main||uid=|Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 11:36:47.451|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 11:36:47.459|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 11:36:47.459|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 11:36:47.581|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 11:36:47.581|main||uid=|Root WebApplicationContext: initialization completed in 1621 ms|
-|WARN|2024-12-11 11:36:48.746|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xde03680d]'|
-|INFO|2024-12-11 11:36:48.753|nioEventLoopGroup-2-1||uid=|[id: 0xde03680d] REGISTERED|
-|INFO|2024-12-11 11:36:48.754|nioEventLoopGroup-2-1||uid=|[id: 0xde03680d] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 11:36:48.755|nioEventLoopGroup-2-1||uid=|[id: 0xde03680d, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 11:36:48.955|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 11:36:49.430|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:36:49.941|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 11:36:50.057|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|WARN|2024-12-11 11:36:50.183|main||uid=|
-
-Using generated security password: 95eaf797-65c2-4db8-a2de-0e00bdfa6579
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-|
-|INFO|2024-12-11 11:36:50.269|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32dcfeea, org.springframework.security.web.context.SecurityContextPersistenceFilter@1805383, org.springframework.security.web.header.HeaderWriterFilter@352f6727, org.springframework.security.web.authentication.logout.LogoutFilter@4438b862, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9f0fc36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e848aea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@738a815c, org.springframework.security.web.session.SessionManagementFilter@10dfa7ef, org.springframework.security.web.access.ExceptionTranslationFilter@4239262e, org.springframework.security.web.access.intercept.AuthorizationFilter@6136e1fc]|
-|INFO|2024-12-11 11:36:50.281|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 11:36:52.866|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:36:52.866|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 11:36:53.655|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 11:36:53.655|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 11:36:53.681|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 11:36:53.681|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 11:36:53.684|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 11:36:53.704|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 11:36:53.795|main||uid=|Started ServerApplication in 8.301 seconds (JVM running for 9.088)|
-|INFO|2024-12-11 11:36:54.602|RMI TCP Connection(5)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:36:54.602|RMI TCP Connection(5)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 11:36:54.603|RMI TCP Connection(4)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 11:36:54.604|RMI TCP Connection(5)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 11:36:54.848|RMI TCP Connection(4)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 11:37:01.322|ccvoice-executor-1||uid=|用户test2注册成功|
-|INFO|2024-12-11 13:35:05.879|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 13:35:05.881|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 13:35:06.020|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 13:35:06.020|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 13:35:06.190|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 13:35:06.190|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 13:35:06.347|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 13:35:06.348|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 13:35:06.500|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 13:35:06.501|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 13:35:06.603|nioEventLoopGroup-2-1||uid=|[id: 0xde03680d, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 13:35:06.603|nioEventLoopGroup-2-1||uid=|[id: 0xde03680d, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 13:35:08.676|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 13:35:08.677|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 13:35:08.683|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 15:48:58.581|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 17468 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 15:48:58.584|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 15:49:00.081|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 15:49:00.084|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 15:49:00.137|main||uid=|Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 15:49:00.789|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 15:49:00.798|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 15:49:00.798|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 15:49:00.987|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 15:49:00.987|main||uid=|Root WebApplicationContext: initialization completed in 2359 ms|
-|WARN|2024-12-11 15:49:02.416|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x55694756]'|
-|INFO|2024-12-11 15:49:02.426|nioEventLoopGroup-2-1||uid=|[id: 0x55694756] REGISTERED|
-|INFO|2024-12-11 15:49:02.427|nioEventLoopGroup-2-1||uid=|[id: 0x55694756] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 15:49:02.429|nioEventLoopGroup-2-1||uid=|[id: 0x55694756, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 15:49:02.776|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 15:49:03.680|redisson-netty-4-4||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 15:49:04.130|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 15:49:04.282|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|WARN|2024-12-11 15:49:04.442|main||uid=|
-
-Using generated security password: 44dcf730-3875-4304-b35f-f2de50882739
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-|
-|INFO|2024-12-11 15:49:04.563|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40016ce1, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f409872, org.springframework.security.web.header.HeaderWriterFilter@46ab4efc, org.springframework.security.web.authentication.logout.LogoutFilter@d16209e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@472c9f88, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a6fb62f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@203765b2, org.springframework.security.web.session.SessionManagementFilter@b5312df, org.springframework.security.web.access.ExceptionTranslationFilter@7534785a, org.springframework.security.web.access.intercept.AuthorizationFilter@a9a8ec3]|
-|INFO|2024-12-11 15:49:04.580|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 15:49:08.718|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 15:49:08.718|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 15:49:09.613|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 15:49:09.614|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 15:49:09.644|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 15:49:09.645|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 15:49:09.648|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 15:49:09.681|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 15:49:09.819|main||uid=|Started ServerApplication in 11.854 seconds (JVM running for 13.543)|
-|INFO|2024-12-11 15:49:10.354|RMI TCP Connection(2)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 15:49:10.354|RMI TCP Connection(2)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 15:49:10.356|RMI TCP Connection(1)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 15:49:10.356|RMI TCP Connection(2)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 15:49:10.620|RMI TCP Connection(1)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 15:50:13.031|nioEventLoopGroup-2-1||uid=|[id: 0x55694756, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0x7961c57f, L:/127.0.0.1:8090 - R:/127.0.0.1:53142]|
-|INFO|2024-12-11 15:50:13.032|nioEventLoopGroup-2-1||uid=|[id: 0x55694756, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
-|ERROR|2024-12-11 15:55:23.673|redisson-netty-4-4||uid=|Exception occured. Channel: [id: 0x8c26c4b9, L:/192.168.0.121:53026 - R:111.229.84.34/111.229.84.34:6379]|
-java.io.IOException: 远程主机强迫关闭了一个现有的连接。
-	at sun.nio.ch.SocketDispatcher.read0(Native Method)
-	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
-	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
-	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
-	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
-	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258)
-	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
-	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Thread.java:750)
-|ERROR|2024-12-11 15:55:24.155|redisson-netty-4-3||uid=|Exception occured. Channel: [id: 0x838c7611, L:/192.168.0.121:53041 - R:111.229.84.34/111.229.84.34:6379]|
-java.io.IOException: 远程主机强迫关闭了一个现有的连接。
-	at sun.nio.ch.SocketDispatcher.read0(Native Method)
-	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
-	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
-	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
-	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
-	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258)
-	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
-	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Thread.java:750)
-|INFO|2024-12-11 15:55:45.312|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 15:55:45.325|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 15:55:45.465|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 15:55:45.465|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 15:55:45.634|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 15:55:45.635|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 15:55:45.803|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 15:55:45.803|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 15:55:45.949|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 15:55:45.949|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 15:55:46.349|nioEventLoopGroup-2-1||uid=|[id: 0x55694756, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 15:55:46.349|nioEventLoopGroup-2-1||uid=|[id: 0x55694756, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 15:55:48.426|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 15:55:48.427|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 15:55:48.435|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 15:55:55.595|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 14144 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 15:55:55.595|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 15:55:56.705|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 15:55:56.708|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 15:55:56.753|main||uid=|Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 15:55:57.412|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 15:55:57.421|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 15:55:57.421|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 15:55:57.567|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 15:55:57.567|main||uid=|Root WebApplicationContext: initialization completed in 1929 ms|
-|WARN|2024-12-11 15:55:59.246|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x843eba31]'|
-|INFO|2024-12-11 15:55:59.260|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31] REGISTERED|
-|INFO|2024-12-11 15:55:59.262|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 15:55:59.265|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 15:55:59.657|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 15:56:00.297|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 15:56:00.828|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 15:56:01.031|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|WARN|2024-12-11 15:56:01.304|main||uid=|
-
-Using generated security password: bb2155cc-5c73-4281-b956-1f195d9f7c20
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-|
-|INFO|2024-12-11 15:56:01.496|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69e2fe3b, org.springframework.security.web.context.SecurityContextPersistenceFilter@48c5698, org.springframework.security.web.header.HeaderWriterFilter@57c6feea, org.springframework.security.web.authentication.logout.LogoutFilter@67eeb310, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68e24e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@340c5fb6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27afbf14, org.springframework.security.web.session.SessionManagementFilter@39c7fb0b, org.springframework.security.web.access.ExceptionTranslationFilter@3db1ce78, org.springframework.security.web.access.intercept.AuthorizationFilter@598657cd]|
-|INFO|2024-12-11 15:56:01.516|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 15:56:04.821|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 15:56:04.822|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 15:56:05.729|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 15:56:05.729|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 15:56:05.774|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 15:56:05.776|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 15:56:05.781|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 15:56:05.825|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 15:56:06.041|main||uid=|Started ServerApplication in 10.933 seconds (JVM running for 12.047)|
-|INFO|2024-12-11 15:56:06.408|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 15:56:06.408|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 15:56:06.410|RMI TCP Connection(1)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 15:56:06.764|RMI TCP Connection(3)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 15:56:07.387|RMI TCP Connection(3)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 15:56:21.720|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0xb811ee81, L:/127.0.0.1:8090 - R:/127.0.0.1:53582]|
-|INFO|2024-12-11 15:56:21.721|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
-|ERROR|2024-12-11 15:56:34.166|http-nio-8080-exec-1||uid=|Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception|
-org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
-	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456)
-	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:750)
-|WARN|2024-12-11 15:56:53.367|http-nio-8080-exec-3||uid=|Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]|
-|INFO|2024-12-11 16:13:51.847|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0x8d6fda5e, L:/127.0.0.1:8090 - R:/127.0.0.1:54227]|
-|INFO|2024-12-11 16:13:51.847|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
-|INFO|2024-12-11 16:13:59.457|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:14:08.466|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0x09d86e4a, L:/127.0.0.1:8090 - R:/127.0.0.1:54241]|
-|INFO|2024-12-11 16:14:08.466|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
-|INFO|2024-12-11 16:14:33.164|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:14:33.165|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:16:13.642|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:16:13.644|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:16:13.789|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:16:13.790|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:16:13.949|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 16:16:13.949|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 16:16:14.101|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:16:14.101|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:16:14.248|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:16:14.248|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:16:14.348|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 16:16:14.348|nioEventLoopGroup-2-1||uid=|[id: 0x843eba31, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 16:16:16.435|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 16:16:16.436|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 16:16:16.448|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 16:16:21.802|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 25924 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 16:16:21.803|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 16:16:22.917|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 16:16:22.919|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 16:16:22.964|main||uid=|Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 16:16:23.728|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 16:16:23.742|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 16:16:23.743|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 16:16:23.894|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 16:16:23.894|main||uid=|Root WebApplicationContext: initialization completed in 2052 ms|
-|WARN|2024-12-11 16:16:25.788|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xcc57829a]'|
-|INFO|2024-12-11 16:16:25.801|nioEventLoopGroup-2-1||uid=|[id: 0xcc57829a] REGISTERED|
-|INFO|2024-12-11 16:16:25.803|nioEventLoopGroup-2-1||uid=|[id: 0xcc57829a] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 16:16:25.808|nioEventLoopGroup-2-1||uid=|[id: 0xcc57829a, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 16:16:26.271|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 16:16:26.886|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 16:16:27.700|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 16:16:27.883|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|WARN|2024-12-11 16:16:28.105|main||uid=|
-
-Using generated security password: 49aa7e11-7c1e-4ac8-91a9-a668c9919821
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-|
-|INFO|2024-12-11 16:16:28.272|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e5f5478, org.springframework.security.web.context.SecurityContextPersistenceFilter@66298fe9, org.springframework.security.web.header.HeaderWriterFilter@340c5fb6, org.springframework.security.web.authentication.logout.LogoutFilter@5c25d0d1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5563bb40, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bb4ed71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5fb07347, org.springframework.security.web.session.SessionManagementFilter@45d389f2, org.springframework.security.web.access.ExceptionTranslationFilter@c732e1c, org.springframework.security.web.access.intercept.AuthorizationFilter@13fe5bb7]|
-|INFO|2024-12-11 16:16:28.290|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 16:16:31.350|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 16:16:31.350|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 16:16:32.179|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 16:16:32.180|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 16:16:32.220|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 16:16:32.222|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 16:16:32.226|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 16:16:32.268|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 16:16:32.453|main||uid=|Started ServerApplication in 11.152 seconds (JVM running for 12.171)|
-|INFO|2024-12-11 16:16:32.823|RMI TCP Connection(1)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 16:16:33.132|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 16:16:33.132|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 16:16:33.134|RMI TCP Connection(3)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 16:16:33.370|RMI TCP Connection(1)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 16:17:13.591|nioEventLoopGroup-2-1||uid=|[id: 0xcc57829a, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0xc1af2279, L:/127.0.0.1:8090 - R:/127.0.0.1:54551]|
-|INFO|2024-12-11 16:17:13.593|nioEventLoopGroup-2-1||uid=|[id: 0xcc57829a, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
-|INFO|2024-12-11 16:21:59.494|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:21:59.496|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:21:59.642|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:21:59.643|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:21:59.811|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 16:21:59.811|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 16:21:59.965|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:21:59.965|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:22:00.442|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 16:22:00.442|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 16:22:00.537|nioEventLoopGroup-2-1||uid=|[id: 0xcc57829a, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 16:22:00.537|nioEventLoopGroup-2-1||uid=|[id: 0xcc57829a, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 16:22:02.628|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 16:22:02.629|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 16:22:02.637|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 17:16:17.544|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 28168 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 17:16:17.547|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 17:16:18.645|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 17:16:18.647|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 17:16:18.692|main||uid=|Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 17:16:19.272|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 17:16:19.280|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 17:16:19.281|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 17:16:19.407|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 17:16:19.408|main||uid=|Root WebApplicationContext: initialization completed in 1824 ms|
-|WARN|2024-12-11 17:16:21.056|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x5678d898]'|
-|INFO|2024-12-11 17:16:21.065|nioEventLoopGroup-2-1||uid=|[id: 0x5678d898] REGISTERED|
-|INFO|2024-12-11 17:16:21.066|nioEventLoopGroup-2-1||uid=|[id: 0x5678d898] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 17:16:21.068|nioEventLoopGroup-2-1||uid=|[id: 0x5678d898, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 17:16:21.341|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 17:16:21.853|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 17:16:22.353|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 17:16:22.489|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|WARN|2024-12-11 17:16:22.629|main||uid=|
-
-Using generated security password: dc631eab-1628-47c2-9955-243bd3b2d38f
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-|
-|INFO|2024-12-11 17:16:22.727|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3095d401, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b021664, org.springframework.security.web.header.HeaderWriterFilter@1377b1a0, org.springframework.security.web.authentication.logout.LogoutFilter@2a7ebe07, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@752973de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67afe909, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2037f12b, org.springframework.security.web.session.SessionManagementFilter@27dbaa33, org.springframework.security.web.access.ExceptionTranslationFilter@300bb303, org.springframework.security.web.access.intercept.AuthorizationFilter@67b5e613]|
-|INFO|2024-12-11 17:16:22.739|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 17:16:25.027|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:16:25.027|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 17:16:25.827|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:16:25.828|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 17:16:25.853|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 17:16:25.853|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 17:16:25.856|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 17:16:25.875|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 17:16:25.965|main||uid=|Started ServerApplication in 8.837 seconds (JVM running for 9.619)|
-|INFO|2024-12-11 17:16:26.593|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 17:16:26.593|RMI TCP Connection(3)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 17:16:26.595|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 17:16:26.596|RMI TCP Connection(3)-172.18.128.1||uid=|Completed initialization in 3 ms|
-|INFO|2024-12-11 17:16:26.843|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 17:17:07.191|ccvoice-executor-1||uid=|用户test3注册成功|
-|ERROR|2024-12-11 17:17:47.919|http-nio-8080-exec-4||uid=|Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'ip_info' in 'field list'
-### The error may exist in com/ela/ccvoice/common/user/mapper/UserMapper.java (best guess)
+|INFO|2024-12-15 20:30:33.721|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b94703b, org.springframework.security.web.context.SecurityContextPersistenceFilter@38f502fc, org.springframework.security.web.header.HeaderWriterFilter@f59da34, org.springframework.security.web.authentication.logout.LogoutFilter@4e7bc939, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67afe909, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60fc7f43, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33a47707, org.springframework.security.web.session.SessionManagementFilter@52a67293, org.springframework.security.web.access.ExceptionTranslationFilter@48cf8414, org.springframework.security.web.access.intercept.AuthorizationFilter@a9e8da1]|
+|INFO|2024-12-15 20:30:33.736|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
+|INFO|2024-12-15 20:30:36.030|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:30:36.031|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
+|INFO|2024-12-15 20:30:36.680|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:30:36.680|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
+|INFO|2024-12-15 20:30:36.707|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
+|INFO|2024-12-15 20:30:36.708|main||uid=|Documentation plugins bootstrapped|
+|INFO|2024-12-15 20:30:36.710|main||uid=|Found 1 custom documentation plugin(s)|
+|INFO|2024-12-15 20:30:36.734|main||uid=|Scanning for api listing references|
+|INFO|2024-12-15 20:30:36.842|main||uid=|Started ServerApplication in 9.565 seconds (JVM running for 10.666)|
+|INFO|2024-12-15 20:30:37.651|RMI TCP Connection(2)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
+|INFO|2024-12-15 20:30:37.652|RMI TCP Connection(2)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
+|INFO|2024-12-15 20:30:37.653|RMI TCP Connection(2)-172.18.128.1||uid=|Completed initialization in 1 ms|
+|INFO|2024-12-15 20:30:37.654|RMI TCP Connection(3)-172.18.128.1||uid=|HikariPool-1 - Starting...|
+|INFO|2024-12-15 20:30:37.999|RMI TCP Connection(3)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
+|INFO|2024-12-15 20:30:54.696|nioEventLoopGroup-2-1||uid=|[id: 0xdc101376, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0xe689ed80, L:/127.0.0.1:8090 - R:/127.0.0.1:58350]|
+|INFO|2024-12-15 20:30:54.698|nioEventLoopGroup-2-1||uid=|[id: 0xdc101376, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
+|INFO|2024-12-15 20:31:17.583|nioEventLoopGroup-3-1||uid=|用户test3登录成功|
+|WARN|2024-12-15 20:31:17.672|nioEventLoopGroup-3-1||uid=|An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.|
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'ccdb.user_role' doesn't exist
+### The error may exist in com/ela/ccvoice/common/user/mapper/UserRoleMapper.java (best guess)
 ### The error may involve defaultParameterMap
 ### The error occurred while setting parameters
-### SQL: SELECT  id,name,password,avatar,email,sex,active_status,last_opt_time,status,create_time,update_time,ip_info  FROM user     WHERE (name = ?)
-### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'ip_info' in 'field list'
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'ip_info' in 'field list'] with root cause|
-java.sql.SQLSyntaxErrorException: Unknown column 'ip_info' in 'field list'
+### SQL: SELECT  id,uid,role_id,create_time,update_time  FROM user_role     WHERE (uid = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Table 'ccdb.user_role' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'ccdb.user_role' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy101.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:173)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:78)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy116.selectList(Unknown Source)
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.list(ChainQuery.java:39)
+	at com.ela.ccvoice.common.user.dao.UserRoleDao.listByUid(UserRoleDao.java:20)
+	at com.ela.ccvoice.common.user.dao.UserRoleDao$$FastClassBySpringCGLIB$$20e28e98.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at com.ela.ccvoice.common.user.dao.UserRoleDao$$EnhancerBySpringCGLIB$$3ddaef71.listByUid(<generated>)
+	at com.ela.ccvoice.common.user.service.cache.UserCache.getRoleSet(UserCache.java:171)
+	at com.ela.ccvoice.common.user.service.impl.RoleServiceImpl.hasPower(RoleServiceImpl.java:21)
+	at com.ela.ccvoice.common.websocket.service.impl.WebSocketServiceImpl.loginSuccess(WebSocketServiceImpl.java:248)
+	at com.ela.ccvoice.common.websocket.service.impl.WebSocketServiceImpl.handleUsernamePasswordLogin(WebSocketServiceImpl.java:146)
+	at com.ela.ccvoice.common.websocket.service.impl.WebSocketServiceImpl.handleLoginReq(WebSocketServiceImpl.java:109)
+	at com.ela.ccvoice.common.websocket.NettyWebSocketServerHandler.channelRead0(NettyWebSocketServerHandler.java:75)
+	at com.ela.ccvoice.common.websocket.NettyWebSocketServerHandler.channelRead0(NettyWebSocketServerHandler.java:19)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:89)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:299)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'ccdb.user_role' doesn't exist
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
@@ -636,233 +128,296 @@ java.sql.SQLSyntaxErrorException: Unknown column 'ip_info' in 'field list'
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
-	at com.sun.proxy.$Proxy101.selectOne(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:90)
+	... 57 common frames omitted
+|INFO|2024-12-15 20:43:51.333|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 20:43:51.334|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 20:43:51.406|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 20:43:51.406|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 20:43:51.587|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:43:51.588|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:43:51.666|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 20:43:51.666|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 20:43:51.750|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 20:43:51.750|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 20:43:51.802|nioEventLoopGroup-2-1||uid=|[id: 0xdc101376, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
+|INFO|2024-12-15 20:43:51.802|nioEventLoopGroup-2-1||uid=|[id: 0xdc101376, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
+|INFO|2024-12-15 20:43:53.881|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
+|INFO|2024-12-15 20:43:53.883|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
+|INFO|2024-12-15 20:43:53.891|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
+|INFO|2024-12-15 20:43:59.215|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 7380 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
+|INFO|2024-12-15 20:43:59.217|main||uid=|The following 1 profile is active: "prod"|
+|INFO|2024-12-15 20:44:00.238|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
+|INFO|2024-12-15 20:44:00.240|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
+|INFO|2024-12-15 20:44:00.285|main||uid=|Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.|
+|INFO|2024-12-15 20:44:00.979|main||uid=|Tomcat initialized with port(s): 8080 (http)|
+|INFO|2024-12-15 20:44:00.989|main||uid=|Starting service [Tomcat]|
+|INFO|2024-12-15 20:44:00.990|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
+|INFO|2024-12-15 20:44:01.134|main||uid=|Initializing Spring embedded WebApplicationContext|
+|INFO|2024-12-15 20:44:01.134|main||uid=|Root WebApplicationContext: initialization completed in 1881 ms|
+|WARN|2024-12-15 20:44:02.697|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xf8a1b3c8]'|
+|INFO|2024-12-15 20:44:02.703|nioEventLoopGroup-2-1||uid=|[id: 0xf8a1b3c8] REGISTERED|
+|INFO|2024-12-15 20:44:02.704|nioEventLoopGroup-2-1||uid=|[id: 0xf8a1b3c8] BIND: 0.0.0.0/0.0.0.0:8090|
+|INFO|2024-12-15 20:44:02.706|nioEventLoopGroup-2-1||uid=|[id: 0xf8a1b3c8, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
+|INFO|2024-12-15 20:44:02.910|main||uid=|Redisson 3.17.1|
+|INFO|2024-12-15 20:44:03.293|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
+|INFO|2024-12-15 20:44:03.581|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
+|INFO|2024-12-15 20:44:03.707|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
+|WARN|2024-12-15 20:44:03.845|main||uid=|
+
+Using generated security password: c30d7646-2a52-4c50-baf5-0b5d35cff4fd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+|
+|INFO|2024-12-15 20:44:03.955|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d290757, org.springframework.security.web.context.SecurityContextPersistenceFilter@67afe909, org.springframework.security.web.header.HeaderWriterFilter@52a67293, org.springframework.security.web.authentication.logout.LogoutFilter@6fc1a8f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6903ed0e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3212d853, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@720a1fd0, org.springframework.security.web.session.SessionManagementFilter@38f502fc, org.springframework.security.web.access.ExceptionTranslationFilter@15d65fcf, org.springframework.security.web.access.intercept.AuthorizationFilter@b94703b]|
+|INFO|2024-12-15 20:44:03.972|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
+|INFO|2024-12-15 20:44:04.014|nioEventLoopGroup-2-1||uid=|[id: 0xf8a1b3c8, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0x294874db, L:/127.0.0.1:8090 - R:/127.0.0.1:61571]|
+|INFO|2024-12-15 20:44:04.015|nioEventLoopGroup-2-1||uid=|[id: 0xf8a1b3c8, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
+|INFO|2024-12-15 20:44:06.220|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:44:06.220|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
+|INFO|2024-12-15 20:44:06.889|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:44:06.889|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
+|INFO|2024-12-15 20:44:06.922|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
+|INFO|2024-12-15 20:44:06.923|main||uid=|Documentation plugins bootstrapped|
+|INFO|2024-12-15 20:44:06.926|main||uid=|Found 1 custom documentation plugin(s)|
+|INFO|2024-12-15 20:44:06.952|main||uid=|Scanning for api listing references|
+|INFO|2024-12-15 20:44:07.085|main||uid=|Started ServerApplication in 8.291 seconds (JVM running for 9.129)|
+|INFO|2024-12-15 20:44:07.637|RMI TCP Connection(2)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
+|INFO|2024-12-15 20:44:07.637|RMI TCP Connection(2)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
+|INFO|2024-12-15 20:44:07.638|RMI TCP Connection(3)-172.18.128.1||uid=|HikariPool-1 - Starting...|
+|INFO|2024-12-15 20:44:07.640|RMI TCP Connection(2)-172.18.128.1||uid=|Completed initialization in 3 ms|
+|INFO|2024-12-15 20:44:07.881|RMI TCP Connection(3)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
+|INFO|2024-12-15 20:44:13.536|nioEventLoopGroup-3-1||uid=|用户test3登录成功|
+|WARN|2024-12-15 20:44:13.593|nioEventLoopGroup-3-1||uid=|An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.|
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'ccdb.user_role' doesn't exist
+### The error may exist in com/ela/ccvoice/common/user/mapper/UserRoleMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,uid,role_id,create_time,update_time  FROM user_role     WHERE (uid = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Table 'ccdb.user_role' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'ccdb.user_role' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy101.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:173)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:78)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy105.selectOne(Unknown Source)
-	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.one(ChainQuery.java:48)
-	at com.ela.ccvoice.common.user.dao.UserDao.getByName(UserDao.java:36)
-	at com.ela.ccvoice.common.user.dao.UserDao$$FastClassBySpringCGLIB$$8140f0ee.invoke(<generated>)
+	at com.sun.proxy.$Proxy116.selectList(Unknown Source)
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.list(ChainQuery.java:39)
+	at com.ela.ccvoice.common.user.dao.UserRoleDao.listByUid(UserRoleDao.java:20)
+	at com.ela.ccvoice.common.user.dao.UserRoleDao$$FastClassBySpringCGLIB$$20e28e98.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
 	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
-	at com.ela.ccvoice.common.user.dao.UserDao$$EnhancerBySpringCGLIB$$5ff5f37a.getByName(<generated>)
-	at com.ela.ccvoice.common.user.service.impl.UserServiceImpl.login(UserServiceImpl.java:61)
-	at com.ela.ccvoice.common.user.service.impl.UserServiceImpl$$FastClassBySpringCGLIB$$c9f5e612.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
-	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
-	at com.ela.ccvoice.common.user.service.impl.UserServiceImpl$$EnhancerBySpringCGLIB$$e6352966.login(<generated>)
-	at com.ela.ccvoice.common.user.controller.AuthController.login(AuthController.java:44)
+	at com.ela.ccvoice.common.user.dao.UserRoleDao$$EnhancerBySpringCGLIB$$c5c175c.listByUid(<generated>)
+	at com.ela.ccvoice.common.user.service.cache.UserCache.getRoleSet(UserCache.java:171)
+	at com.ela.ccvoice.common.user.service.impl.RoleServiceImpl.hasPower(RoleServiceImpl.java:21)
+	at com.ela.ccvoice.common.websocket.service.impl.WebSocketServiceImpl.loginSuccess(WebSocketServiceImpl.java:250)
+	at com.ela.ccvoice.common.websocket.service.impl.WebSocketServiceImpl.handleUsernamePasswordLogin(WebSocketServiceImpl.java:148)
+	at com.ela.ccvoice.common.websocket.service.impl.WebSocketServiceImpl.handleLoginReq(WebSocketServiceImpl.java:109)
+	at com.ela.ccvoice.common.websocket.NettyWebSocketServerHandler.channelRead0(NettyWebSocketServerHandler.java:75)
+	at com.ela.ccvoice.common.websocket.NettyWebSocketServerHandler.channelRead0(NettyWebSocketServerHandler.java:19)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.Utf8FrameValidator.channelRead(Utf8FrameValidator.java:89)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:327)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:299)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'ccdb.user_role' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:69)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:92)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilterInternal(AuthorizationFilter.java:58)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:750)
-|INFO|2024-12-11 17:18:32.860|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 17:18:32.861|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 17:18:33.004|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 17:18:33.005|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 17:18:33.170|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:18:33.171|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:18:33.322|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 17:18:33.323|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 17:18:33.460|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 17:18:33.460|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 17:18:33.552|nioEventLoopGroup-2-1||uid=|[id: 0x5678d898, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 17:18:33.552|nioEventLoopGroup-2-1||uid=|[id: 0x5678d898, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 17:18:35.620|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 17:18:35.621|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 17:18:35.629|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 17:19:15.009|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 12416 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 17:19:15.012|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 17:19:16.117|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 17:19:16.119|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 17:19:16.167|main||uid=|Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 17:19:16.733|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 17:19:16.741|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 17:19:16.741|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 17:19:16.869|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 17:19:16.869|main||uid=|Root WebApplicationContext: initialization completed in 1821 ms|
-|WARN|2024-12-11 17:19:18.460|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x99a64a23]'|
-|INFO|2024-12-11 17:19:18.467|nioEventLoopGroup-2-1||uid=|[id: 0x99a64a23] REGISTERED|
-|INFO|2024-12-11 17:19:18.468|nioEventLoopGroup-2-1||uid=|[id: 0x99a64a23] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 17:19:18.470|nioEventLoopGroup-2-1||uid=|[id: 0x99a64a23, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 17:19:18.702|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 17:19:19.198|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 17:19:19.694|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 17:19:19.810|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|WARN|2024-12-11 17:19:19.947|main||uid=|
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 57 common frames omitted
+|INFO|2024-12-15 20:47:21.780|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 20:47:21.781|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 20:47:21.849|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 20:47:21.849|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 20:47:22.024|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:47:22.024|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:47:22.102|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 20:47:22.102|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 20:47:22.167|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 20:47:22.168|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 20:47:22.221|nioEventLoopGroup-2-1||uid=|[id: 0xf8a1b3c8, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
+|INFO|2024-12-15 20:47:22.222|nioEventLoopGroup-2-1||uid=|[id: 0xf8a1b3c8, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
+|INFO|2024-12-15 20:47:24.289|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
+|INFO|2024-12-15 20:47:24.290|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
+|INFO|2024-12-15 20:47:24.298|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
+|INFO|2024-12-15 20:47:29.592|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 19552 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
+|INFO|2024-12-15 20:47:29.595|main||uid=|The following 1 profile is active: "prod"|
+|INFO|2024-12-15 20:47:30.590|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
+|INFO|2024-12-15 20:47:30.592|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
+|INFO|2024-12-15 20:47:30.634|main||uid=|Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.|
+|INFO|2024-12-15 20:47:31.178|main||uid=|Tomcat initialized with port(s): 8080 (http)|
+|INFO|2024-12-15 20:47:31.187|main||uid=|Starting service [Tomcat]|
+|INFO|2024-12-15 20:47:31.187|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
+|INFO|2024-12-15 20:47:31.333|main||uid=|Initializing Spring embedded WebApplicationContext|
+|INFO|2024-12-15 20:47:31.333|main||uid=|Root WebApplicationContext: initialization completed in 1701 ms|
+|WARN|2024-12-15 20:47:33.080|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x41c1fe3a]'|
+|INFO|2024-12-15 20:47:33.085|nioEventLoopGroup-2-1||uid=|[id: 0x41c1fe3a] REGISTERED|
+|INFO|2024-12-15 20:47:33.087|nioEventLoopGroup-2-1||uid=|[id: 0x41c1fe3a] BIND: 0.0.0.0/0.0.0.0:8090|
+|INFO|2024-12-15 20:47:33.088|nioEventLoopGroup-2-1||uid=|[id: 0x41c1fe3a, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
+|INFO|2024-12-15 20:47:33.318|main||uid=|Redisson 3.17.1|
+|INFO|2024-12-15 20:47:33.716|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
+|INFO|2024-12-15 20:47:33.967|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
+|INFO|2024-12-15 20:47:34.117|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
+|WARN|2024-12-15 20:47:34.334|main||uid=|
 
-Using generated security password: 66def27d-a9ca-4bd1-a14e-2440d6269f06
+Using generated security password: f337b419-00d1-429e-b123-175a7a3e19e5
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 |
-|INFO|2024-12-11 17:19:20.056|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33a47707, org.springframework.security.web.context.SecurityContextPersistenceFilter@67c21bf, org.springframework.security.web.header.HeaderWriterFilter@752973de, org.springframework.security.web.authentication.logout.LogoutFilter@67b5e613, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79f1e22e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16e195cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d290757, org.springframework.security.web.session.SessionManagementFilter@793cef95, org.springframework.security.web.access.ExceptionTranslationFilter@27dbaa33, org.springframework.security.web.access.intercept.AuthorizationFilter@14b5752f]|
-|INFO|2024-12-11 17:19:20.071|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 17:19:22.607|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:19:22.607|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 17:19:23.417|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:19:23.417|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 17:19:23.440|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 17:19:23.441|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 17:19:23.443|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 17:19:23.462|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 17:19:23.552|main||uid=|Started ServerApplication in 8.939 seconds (JVM running for 9.769)|
-|INFO|2024-12-11 17:19:24.224|RMI TCP Connection(5)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 17:19:24.224|RMI TCP Connection(5)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 17:19:24.228|RMI TCP Connection(5)-172.18.128.1||uid=|Completed initialization in 2 ms|
-|INFO|2024-12-11 17:19:24.228|RMI TCP Connection(4)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 17:19:24.519|RMI TCP Connection(4)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|WARN|2024-12-11 17:19:42.801|http-nio-8080-exec-3||uid=|Encoded password does not look like BCrypt|
-|INFO|2024-12-11 17:20:12.979|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 17:20:12.980|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 17:20:13.127|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 17:20:13.128|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 17:20:13.297|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:20:13.297|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:20:13.451|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 17:20:13.451|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 17:20:13.609|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
-|INFO|2024-12-11 17:20:13.609|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
-|INFO|2024-12-11 17:20:13.722|nioEventLoopGroup-2-1||uid=|[id: 0x99a64a23, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
-|INFO|2024-12-11 17:20:13.722|nioEventLoopGroup-2-1||uid=|[id: 0x99a64a23, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
-|INFO|2024-12-11 17:20:15.811|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
-|INFO|2024-12-11 17:20:15.812|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
-|INFO|2024-12-11 17:20:15.819|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
-|INFO|2024-12-11 17:22:29.720|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 24184 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
-|INFO|2024-12-11 17:22:29.722|main||uid=|The following 1 profile is active: "prod"|
-|INFO|2024-12-11 17:22:30.747|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
-|INFO|2024-12-11 17:22:30.749|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
-|INFO|2024-12-11 17:22:30.792|main||uid=|Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.|
-|INFO|2024-12-11 17:22:31.414|main||uid=|Tomcat initialized with port(s): 8080 (http)|
-|INFO|2024-12-11 17:22:31.423|main||uid=|Starting service [Tomcat]|
-|INFO|2024-12-11 17:22:31.423|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
-|INFO|2024-12-11 17:22:31.558|main||uid=|Initializing Spring embedded WebApplicationContext|
-|INFO|2024-12-11 17:22:31.558|main||uid=|Root WebApplicationContext: initialization completed in 1799 ms|
-|WARN|2024-12-11 17:22:33.174|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x38745a24]'|
-|INFO|2024-12-11 17:22:33.180|nioEventLoopGroup-2-1||uid=|[id: 0x38745a24] REGISTERED|
-|INFO|2024-12-11 17:22:33.181|nioEventLoopGroup-2-1||uid=|[id: 0x38745a24] BIND: 0.0.0.0/0.0.0.0:8090|
-|INFO|2024-12-11 17:22:33.182|nioEventLoopGroup-2-1||uid=|[id: 0x38745a24, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
-|INFO|2024-12-11 17:22:33.388|main||uid=|Redisson 3.17.1|
-|INFO|2024-12-11 17:22:33.886|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 17:22:34.667|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
-|INFO|2024-12-11 17:22:34.796|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
-|WARN|2024-12-11 17:22:34.963|main||uid=|
+|INFO|2024-12-15 20:47:34.477|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d290757, org.springframework.security.web.context.SecurityContextPersistenceFilter@67afe909, org.springframework.security.web.header.HeaderWriterFilter@52a67293, org.springframework.security.web.authentication.logout.LogoutFilter@6fc1a8f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6903ed0e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3212d853, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@720a1fd0, org.springframework.security.web.session.SessionManagementFilter@38f502fc, org.springframework.security.web.access.ExceptionTranslationFilter@15d65fcf, org.springframework.security.web.access.intercept.AuthorizationFilter@b94703b]|
+|INFO|2024-12-15 20:47:34.494|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
+|INFO|2024-12-15 20:47:36.962|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:47:36.963|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
+|INFO|2024-12-15 20:47:37.635|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 20:47:37.635|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
+|INFO|2024-12-15 20:47:37.658|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
+|INFO|2024-12-15 20:47:37.659|main||uid=|Documentation plugins bootstrapped|
+|INFO|2024-12-15 20:47:37.661|main||uid=|Found 1 custom documentation plugin(s)|
+|INFO|2024-12-15 20:47:37.683|main||uid=|Scanning for api listing references|
+|INFO|2024-12-15 20:47:37.787|main||uid=|Started ServerApplication in 8.602 seconds (JVM running for 9.46)|
+|INFO|2024-12-15 20:47:38.336|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
+|INFO|2024-12-15 20:47:38.337|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
+|INFO|2024-12-15 20:47:38.340|RMI TCP Connection(1)-172.18.128.1||uid=|Completed initialization in 3 ms|
+|INFO|2024-12-15 20:47:38.342|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Starting...|
+|INFO|2024-12-15 20:47:38.734|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
+|INFO|2024-12-15 20:47:40.675|nioEventLoopGroup-2-1||uid=|[id: 0x41c1fe3a, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0xae86b981, L:/127.0.0.1:8090 - R:/127.0.0.1:62598]|
+|INFO|2024-12-15 20:47:40.676|nioEventLoopGroup-2-1||uid=|[id: 0x41c1fe3a, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
+|INFO|2024-12-15 20:47:42.340|nioEventLoopGroup-3-1||uid=|用户test3登录成功|
+|INFO|2024-12-15 21:03:57.675|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 21:03:57.676|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 21:03:57.745|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 21:03:57.745|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 21:03:57.908|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 21:03:57.909|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 21:03:57.981|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 21:03:57.981|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 21:03:58.070|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 21:03:58.071|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 21:03:58.124|nioEventLoopGroup-2-1||uid=|[id: 0x41c1fe3a, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
+|INFO|2024-12-15 21:03:58.124|nioEventLoopGroup-2-1||uid=|[id: 0x41c1fe3a, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
+|INFO|2024-12-15 21:04:00.209|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
+|INFO|2024-12-15 21:04:00.210|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
+|INFO|2024-12-15 21:04:00.219|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
+|INFO|2024-12-15 21:04:15.556|main||uid=|Starting ServerApplication using Java 1.8.0_422 on DESKTOP-A5MDFLQ with PID 23884 (D:\JavaCode\Learn\ccvoice-backend\ccvoice-chat-server\target\classes started by Wart in D:\JavaCode\Learn\ccvoice-backend)|
+|INFO|2024-12-15 21:04:15.558|main||uid=|The following 1 profile is active: "prod"|
+|INFO|2024-12-15 21:04:17.579|main||uid=|Multiple Spring Data modules found, entering strict repository configuration mode!|
+|INFO|2024-12-15 21:04:17.582|main||uid=|Bootstrapping Spring Data Redis repositories in DEFAULT mode.|
+|INFO|2024-12-15 21:04:17.633|main||uid=|Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.|
+|INFO|2024-12-15 21:04:18.358|main||uid=|Tomcat initialized with port(s): 8080 (http)|
+|INFO|2024-12-15 21:04:18.370|main||uid=|Starting service [Tomcat]|
+|INFO|2024-12-15 21:04:18.370|main||uid=|Starting Servlet engine: [Apache Tomcat/9.0.62]|
+|INFO|2024-12-15 21:04:18.575|main||uid=|Initializing Spring embedded WebApplicationContext|
+|INFO|2024-12-15 21:04:18.576|main||uid=|Root WebApplicationContext: initialization completed in 2970 ms|
+|WARN|2024-12-15 21:04:20.499|main||uid=|Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x49771ccd]'|
+|INFO|2024-12-15 21:04:20.507|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd] REGISTERED|
+|INFO|2024-12-15 21:04:20.509|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd] BIND: 0.0.0.0/0.0.0.0:8090|
+|INFO|2024-12-15 21:04:20.510|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd, L:/0:0:0:0:0:0:0:0:8090] ACTIVE|
+|INFO|2024-12-15 21:04:20.789|main||uid=|Redisson 3.17.1|
+|INFO|2024-12-15 21:04:21.248|redisson-netty-4-18||uid=|1 connections initialized for 111.229.84.34/111.229.84.34:6379|
+|INFO|2024-12-15 21:04:21.495|redisson-netty-4-19||uid=|24 connections initialized for 111.229.84.34/111.229.84.34:6379|
+|INFO|2024-12-15 21:04:21.666|main||uid=|Exposing 1 endpoint(s) beneath base path '/actuator'|
+|WARN|2024-12-15 21:04:21.869|main||uid=|
 
-Using generated security password: 9bb2bfdf-1b8c-48e3-9c11-582a485bd24b
+Using generated security password: b6440c3b-e706-4255-82e3-66eb2f60e826
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 |
-|INFO|2024-12-11 17:22:35.069|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@720a1fd0, org.springframework.security.web.context.SecurityContextPersistenceFilter@79f1e22e, org.springframework.security.web.header.HeaderWriterFilter@793cef95, org.springframework.security.web.authentication.logout.LogoutFilter@3095d401, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e154848, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74c7522c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ab7ac02, org.springframework.security.web.session.SessionManagementFilter@67c21bf, org.springframework.security.web.access.ExceptionTranslationFilter@3b021664, org.springframework.security.web.access.intercept.AuthorizationFilter@33a47707]|
-|INFO|2024-12-11 17:22:35.081|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
-|INFO|2024-12-11 17:22:37.456|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:22:37.457|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
-|INFO|2024-12-11 17:22:38.265|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
-|INFO|2024-12-11 17:22:38.265|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
-|INFO|2024-12-11 17:22:38.288|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
-|INFO|2024-12-11 17:22:38.289|main||uid=|Documentation plugins bootstrapped|
-|INFO|2024-12-11 17:22:38.291|main||uid=|Found 1 custom documentation plugin(s)|
-|INFO|2024-12-11 17:22:38.311|main||uid=|Scanning for api listing references|
-|INFO|2024-12-11 17:22:38.400|main||uid=|Started ServerApplication in 9.083 seconds (JVM running for 9.882)|
-|INFO|2024-12-11 17:22:39.092|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
-|INFO|2024-12-11 17:22:39.092|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
-|INFO|2024-12-11 17:22:39.096|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Starting...|
-|INFO|2024-12-11 17:22:39.096|RMI TCP Connection(1)-172.18.128.1||uid=|Completed initialization in 3 ms|
-|INFO|2024-12-11 17:22:39.365|RMI TCP Connection(2)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
-|INFO|2024-12-11 17:22:42.739|http-nio-8080-exec-1||uid=|用户test3登录成功|
-|INFO|2024-12-11 17:23:57.979|http-nio-8080-exec-3||uid=|用户test3登录成功|
+|INFO|2024-12-15 21:04:21.998|main||uid=|Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43deba42, org.springframework.security.web.context.SecurityContextPersistenceFilter@455f4483, org.springframework.security.web.header.HeaderWriterFilter@1a536164, org.springframework.security.web.authentication.logout.LogoutFilter@77c23d90, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7996d0d4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e0986c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e795a1d, org.springframework.security.web.session.SessionManagementFilter@368424db, org.springframework.security.web.access.ExceptionTranslationFilter@3df77dfa, org.springframework.security.web.access.intercept.AuthorizationFilter@612af486]|
+|INFO|2024-12-15 21:04:22.020|main||uid=|Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]|
+|INFO|2024-12-15 21:04:24.382|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 21:04:24.382|main||uid=|Register the listener to container, listenerBeanName:testSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_1|
+|INFO|2024-12-15 21:04:25.028|main||uid=|running container: DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 21:04:25.028|main||uid=|Register the listener to container, listenerBeanName:msgSendConsumer, containerBeanName:org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer_2|
+|INFO|2024-12-15 21:04:25.054|main||uid=|Tomcat started on port(s): 8080 (http) with context path ''|
+|INFO|2024-12-15 21:04:25.055|main||uid=|Documentation plugins bootstrapped|
+|INFO|2024-12-15 21:04:25.057|main||uid=|Found 1 custom documentation plugin(s)|
+|INFO|2024-12-15 21:04:25.078|main||uid=|Scanning for api listing references|
+|INFO|2024-12-15 21:04:25.175|main||uid=|Started ServerApplication in 10.298 seconds (JVM running for 12.18)|
+|INFO|2024-12-15 21:04:25.587|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Spring DispatcherServlet 'dispatcherServlet'|
+|INFO|2024-12-15 21:04:25.588|RMI TCP Connection(1)-172.18.128.1||uid=|Initializing Servlet 'dispatcherServlet'|
+|INFO|2024-12-15 21:04:25.590|RMI TCP Connection(1)-172.18.128.1||uid=|Completed initialization in 2 ms|
+|INFO|2024-12-15 21:04:26.012|RMI TCP Connection(3)-172.18.128.1||uid=|HikariPool-1 - Starting...|
+|INFO|2024-12-15 21:04:26.272|RMI TCP Connection(3)-172.18.128.1||uid=|HikariPool-1 - Start completed.|
+|INFO|2024-12-15 21:04:30.840|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0x928d12a4, L:/127.0.0.1:8090 - R:/127.0.0.1:64886]|
+|INFO|2024-12-15 21:04:30.841|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
+|INFO|2024-12-15 21:11:25.716|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd, L:/0:0:0:0:0:0:0:0:8090] READ: [id: 0x7e7e248c, L:/127.0.0.1:8090 - R:/127.0.0.1:65412]|
+|INFO|2024-12-15 21:11:25.717|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd, L:/0:0:0:0:0:0:0:0:8090] READ COMPLETE|
+|INFO|2024-12-15 21:11:28.170|nioEventLoopGroup-3-2||uid=|用户test3登录成功|
+|INFO|2024-12-15 21:11:47.230|nioEventLoopGroup-3-2||uid=|用户test2登录成功|
+|WARN|2024-12-15 21:13:12.160|nioEventLoopGroup-3-2||uid=|Encoded password does not look like BCrypt|
+|INFO|2024-12-15 21:13:16.562|nioEventLoopGroup-3-2||uid=|用户test2登录成功|
+|INFO|2024-12-15 21:17:37.441|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 21:17:37.442|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 21:17:37.509|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 21:17:37.509|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 21:17:37.666|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='chat_send_msg_gp', namespace='', nameServer='111.229.84.34:9876', topic='chat_send_msg', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 21:17:37.666|SpringApplicationShutdownHook||uid=|container destroyed, DefaultRocketMQListenerContainer{consumerGroup='test-consumer-group', namespace='', nameServer='111.229.84.34:9876', topic='test-topic', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false}|
+|INFO|2024-12-15 21:17:37.743|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 21:17:37.744|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 21:17:37.820|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:10911] result: true|
+|INFO|2024-12-15 21:17:37.821|NettyClientSelector_1||uid=|closeChannel: close the connection to remote address[111.229.84.34:9876] result: true|
+|INFO|2024-12-15 21:17:37.874|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd, L:/0:0:0:0:0:0:0:0:8090] INACTIVE|
+|INFO|2024-12-15 21:17:37.874|nioEventLoopGroup-2-1||uid=|[id: 0x49771ccd, L:/0:0:0:0:0:0:0:0:8090] UNREGISTERED|
+|INFO|2024-12-15 21:17:39.877|SpringApplicationShutdownHook||uid=|成功关闭websocket server|
+|INFO|2024-12-15 21:17:39.878|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown initiated...|
+|INFO|2024-12-15 21:17:39.887|SpringApplicationShutdownHook||uid=|HikariPool-1 - Shutdown completed.|
