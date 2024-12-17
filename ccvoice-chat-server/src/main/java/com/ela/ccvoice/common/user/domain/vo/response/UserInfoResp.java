@@ -17,6 +17,4 @@ public class UserInfoResp {
     private String avatar;
     @ApiModelProperty("性别 1.male 2.female")
     private Integer sex;
-    @ApiModelProperty("剩余改名次数")
-    private Integer modifyNameChange;
 }

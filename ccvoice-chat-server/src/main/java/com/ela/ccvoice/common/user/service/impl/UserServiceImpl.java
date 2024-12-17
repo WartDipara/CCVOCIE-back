@@ -5,10 +5,14 @@ import com.ela.ccvoice.common.user.dao.UserDao;
 import com.ela.ccvoice.common.user.domain.dto.UserLoginInfoDTO;
 import com.ela.ccvoice.common.user.domain.dto.UserRegInfoDTO;
 import com.ela.ccvoice.common.user.domain.entity.User;
+import com.ela.ccvoice.common.user.domain.vo.request.userRelate.ModifyNameReq;
 import com.ela.ccvoice.common.user.domain.vo.response.LoginResp;
 import com.ela.ccvoice.common.user.domain.vo.response.RegisterResp;
+import com.ela.ccvoice.common.user.domain.vo.response.UserInfoResp;
 import com.ela.ccvoice.common.user.service.LoginService;
 import com.ela.ccvoice.common.user.service.UserService;
+import com.ela.ccvoice.common.user.service.adapter.UserAdapter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.producer.MQProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,5 +69,23 @@ public class UserServiceImpl implements UserService {
         String token = loginService.login(user.getId());
         log.info("用户{}登录成功",user.getName());
         return new LoginResp(token,true,"登录成功",user.getId());
+    }
+
+    @Override
+    public UserInfoResp getUserInfo(Long uid) {
+        User user = userDao.getById(uid);
+        return UserAdapter.buildUserInfoResp(user);
+    }
+
+    @Override
+    public void modifyName(Long uid, ModifyNameReq req) {
+        //判断名字是不是重复
+        String newName = req.getName();
+        User oldUser = userDao.getByName(newName);
+        if(oldUser != null){
+            throw new RuntimeException("用户名重复");
+        }
+        userDao.modifyName(uid, newName);
+        log.info("用户{}修改了用户名，新用户名为{}",uid,newName);
     }
 }

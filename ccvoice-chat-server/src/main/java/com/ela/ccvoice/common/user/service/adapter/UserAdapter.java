@@ -33,18 +33,12 @@ public class UserAdapter {
     /**
      *
      * @param user
-     * @param countByValidItemId
      * @return
      */
-    public static UserInfoResp buildUserInfoResp(User user,Integer countByValidItemId){
+    public static UserInfoResp buildUserInfoResp(User user){
         UserInfoResp userInfoResp = new UserInfoResp();
         BeanUtil.copyProperties(user,userInfoResp);
-        userInfoResp.setModifyNameChange(countByValidItemId);
         return userInfoResp;
     }
 
-    /**
-     * TODO
-     * 成就系统，不一定用得到
-     */
 }

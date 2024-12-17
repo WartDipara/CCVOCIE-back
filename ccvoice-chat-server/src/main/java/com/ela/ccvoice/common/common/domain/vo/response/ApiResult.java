@@ -2,6 +2,8 @@ package com.ela.ccvoice.common.common.domain.vo.response;
 
 import lombok.Data;
 
+import javax.xml.bind.annotation.XmlType;
+
 /**
  * 返回给前端的统一返回值接口
  */
@@ -53,6 +55,12 @@ public class ApiResult<T> {
         return result;
     }
 
+    public static <T> ApiResult<T> fail(T msg){
+        return fail(msg.toString());
+    }
+    public static <T> ApiResult<T> fail(String error){
+        return fail(-2,error);
+    }
     /**
      * 带参错误返回
      * code = -2
@@ -60,10 +68,10 @@ public class ApiResult<T> {
      * @param error
      * @return
      */
-    public static <T> ApiResult<T> fail(String error) {
+    public static <T> ApiResult<T> fail(Integer code,String error) {
         ApiResult<T> result = new ApiResult<>();
         result.setIsSuccess(Boolean.FALSE);
-        result.setCode(-2);
+        result.setCode(code);
         result.setErrMsg(error);
         return result;
     }

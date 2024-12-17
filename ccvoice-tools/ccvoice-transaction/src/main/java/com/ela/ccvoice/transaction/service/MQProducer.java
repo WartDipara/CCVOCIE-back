@@ -1,6 +1,10 @@
 package com.ela.ccvoice.transaction.service;
 
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
+
 /**
  * Description: 发送mq工具类
  * Author: <a href="https://github.com/zongzibinbin">abin</a>
@@ -22,7 +26,7 @@ public class MQProducer {
      * @param topic
      * @param body
      */
-    @SecureInvoke
+    //todo
     public void sendSecureMsg(String topic, Object body, Object key) {
         Message<Object> build = MessageBuilder
                 .withPayload(body)
